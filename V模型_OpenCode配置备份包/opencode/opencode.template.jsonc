@@ -1,0 +1,76 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "{{OPENCODE_HOME}}/instructions/vmodel-global.md",
+    "{{OPENCODE_HOME}}/instructions/projects/cswrite-project.md"
+  ],
+  "command": {
+    "vmodel": {
+      "description": "Run the global editable V-model software workflow for the active project",
+      "agent": "vmodel",
+      "subtask": false,
+      "template": "Run the global staged software workflow for the active project:\n\n$ARGUMENTS\n\nUse the loaded global workflow and project profile. Create editable stage artifacts under ./vmodel_runs/<task>/ in the current workspace. Stop at requirement and architecture gates for user review. If the user edited an artifact, read it before continuing. Save one reusable key path only after the complete workflow is accepted."
+    },
+    "cs-vmodel": {
+      "description": "Run the CSWrite project profile through the global editable V-model workflow",
+      "agent": "cswrite-vmodel",
+      "subtask": false,
+      "template": "Run the CSWrite burner software task with the global staged workflow and the CSWrite project profile:\n\n$ARGUMENTS\n\nUse taskpath_memory, kg_rag_neo4j, and codegraph as defined by the project profile. Create editable artifacts under ./vmodel_runs/<task>/ in the current CSWrite workspace. Stop at requirement and architecture gates for user review. Generate software-only tests unless the user explicitly asks otherwise. Save one reusable key path only after the complete workflow is accepted."
+    }
+  },
+  "mcp": {
+    "kg_rag_neo4j": {
+      "type": "local",
+      "enabled": true,
+      "cwd": "{{KG_ROOT}}",
+      "command": [
+        "{{PYTHON_EXE}}",
+        "{{BUNDLE_ROOT}}/mcp/scripts/kg_rag_mcp_server.py"
+      ],
+      "timeout": 180000
+    },
+    "codegraph": {
+      "type": "local",
+      "enabled": true,
+      "cwd": "{{CODE_REPO_ROOT}}",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "{{BUNDLE_ROOT}}/mcp/scripts/start_codegraph_cswrite.template.ps1"
+      ],
+      "timeout": 180000
+    },
+    "taskpath_memory": {
+      "type": "local",
+      "enabled": true,
+      "cwd": "{{BUNDLE_ROOT}}",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "{{BUNDLE_ROOT}}/mcp/scripts/start_taskpath_memory_mcp.ps1"
+      ],
+      "timeout": 180000
+    }
+  },
+  "provider": {
+    "chipsea": {
+      "name": "chipseaAPI",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "{{MODEL_BASE_URL}}"
+      },
+      "models": {
+        "qwen3.7-plus": {
+          "name": "qwen3.7-plus"
+        }
+      }
+    }
+  }
+}
+

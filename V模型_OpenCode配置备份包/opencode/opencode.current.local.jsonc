@@ -1,0 +1,108 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "disabled_providers": [
+    "chipseaapi",
+    "chipsea2"
+  ],
+  "instructions": [
+    "C:/Users/meigang90240/.config/opencode/instructions/vmodel-global.md",
+    "C:/Users/meigang90240/.config/opencode/instructions/projects/cswrite-project.md"
+  ],
+  "command": {
+    "vmodel": {
+      "description": "Run the global editable V-model software workflow for the active project",
+      "agent": "vmodel",
+      "subtask": false,
+      "template": "Run the global staged software workflow for the active project:\n\n$ARGUMENTS\n\nUse the loaded global workflow and project profile. Create editable stage artifacts under ./vmodel_runs/<task>/ in the current workspace. Stop at requirement and architecture gates for user review. If the user edited an artifact, read it before continuing. Save one reusable key path only after the complete workflow is accepted."
+    },
+    "cs-vmodel": {
+      "description": "Run the CSWrite project profile through the global editable V-model workflow",
+      "agent": "cswrite-vmodel",
+      "subtask": false,
+      "template": "Run the CSWrite burner software task with the global staged workflow and the CSWrite project profile:\n\n$ARGUMENTS\n\nUse taskpath_memory, kg_rag_neo4j, and codegraph as defined by the project profile. Create editable artifacts under ./vmodel_runs/<task>/ in the current CSWrite workspace. Stop at requirement and architecture gates for user review. Generate software-only tests unless the user explicitly asks otherwise. Save one reusable key path only after the complete workflow is accepted."
+    }
+  },
+  "mcp": {
+    "maxkb": {
+      "type": "remote",
+      "enabled": true,
+      "url": "http://10.19.100.200:2345/chat/api/mcp",
+      "headers": {
+        "Authorization": "Bearer agent-6df9898e4e6d46cca54cd220cd5ce5c8"
+      },
+      "oauth": false,
+      "timeout": 180000
+    },
+"codegraph": {
+      "type": "local",
+      "enabled": true,
+      "cwd": "C:/Users/meigang90240/Desktop/KG/code/git_CSWrite3.0",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/meigang90240/Desktop/KG/scripts/start_codegraph_cswrite.ps1"
+      ]
+    },
+    "kg_rag_neo4j": {
+        "type": "local",
+        "enabled": true,
+        "cwd": "C:/Users/meigang90240/Desktop/KG",
+        "command": [
+          "D:/anaconda3/python.exe",
+          "C:/Users/meigang90240/Desktop/KG/scripts/kg_rag_mcp_server.py"
+        ],
+        "timeout": 180000
+      },
+    "taskpath_memory": {
+        "type": "local",
+        "enabled": true,
+        "cwd": "C:/Users/meigang90240/Desktop/KG",
+        "command": [
+          "D:/anaconda3/python.exe",
+          "C:/Users/meigang90240/Desktop/KG/scripts/taskpath_memory_mcp_proxy.py"
+        ],
+        "timeout": 180000
+      }
+  },
+  "provider": {
+    "chipseaapi": {
+      "name": "ChipseaAPI",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://192.168.21.155:3000/v1"
+      },
+      "models": {
+        "qwen3.7-plus": {
+          "name": "qwen3.7-plus"
+        }
+      }
+    },
+    "chipsea": {
+      "name": "chipseaAPI",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://192.168.21.155:3000/v1"
+      },
+      "models": {
+        "qwen3.7-plus": {
+          "name": "qwen3.7-plus"
+        }
+      }
+    },
+    "chipsea2": {
+      "name": "chipsea2",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://192.168.21.155:3000/v1"
+      },
+      "models": {
+        "qwen3.7-plus": {
+          "name": "qwen3.7-plus"
+        }
+      }
+    }
+  }
+}
