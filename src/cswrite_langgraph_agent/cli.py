@@ -25,6 +25,30 @@ def print_summary(state: dict[str, Any]) -> None:
     print(f"当前阶段: {state.get('stage')}")
     print(f"待确认: {state.get('pending_gate') or '无'}")
     print(f"编码状态: {state.get('coding_status', '')}")
+    if state.get("execution_plan"):
+        plan = state["execution_plan"]
+        print(
+            "执行计划: "
+            f"{plan.get('complexity_level')} / "
+            f"自修复={plan.get('repair_policy', {}).get('enabled')}"
+        )
+    if state.get("critic_report"):
+        critic = state["critic_report"]
+        print(
+            "Critic: "
+            f"{critic.get('status')} / issues={critic.get('issue_count')} / "
+            f"can_repair={critic.get('can_repair')}"
+        )
+    if state.get("repair_history"):
+        print(f"修复次数: {len(state.get('repair_history', []))}")
+    chip_spec = state.get("chip_spec") or {}
+    if chip_spec:
+        print(
+            "芯片规格: "
+            f"{chip_spec.get('chip_macro')} / {chip_spec.get('bit_width')}bit / "
+            f"{chip_spec.get('protocol_label')}"
+        )
+    print(f"LLM 调用次数: {len(state.get('llm_calls', []))}")
     print(f"任务目录: {state.get('task_dir')}")
     print("产物文件:")
     for name, path in state.get("artifacts", {}).items():
@@ -44,6 +68,8 @@ def cmd_run(args: argparse.Namespace) -> None:
             "auto_approve": args.auto_approve,
             "execute_code": args.execute_code,
             "save_real_taskpath": args.save_real_taskpath,
+            "inject_coding_defect": args.inject_coding_defect,
+            "max_repair_attempts": args.max_repair_attempts,
         }
     )
     print_summary(state)
@@ -87,6 +113,20 @@ def cmd_doctor(_: argparse.Namespace) -> None:
     print(f"llm_api_key_present: {bool(cfg.llm_api_key)}")
 
 
+def cmd_graph(args: argparse.Namespace) -> None:
+    """导出 LangGraph 结构，面试时可直接贴 Mermaid 图讲节点和条件边。"""
+
+    app, _ = build_graph(get_config())
+    mermaid = app.get_graph().draw_mermaid()
+    if args.output:
+        path = Path(args.output)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(mermaid, encoding="utf-8")
+        print(f"graph_mermaid: {path}")
+    else:
+        print(mermaid)
+
+
 def cmd_llm_smoke(_: argparse.Namespace) -> None:
     cfg = get_config()
     text = LLMClient(cfg).complete("你是一个测试助手。", "请只回复：pong", temperature=0)
@@ -104,6 +144,8 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--auto-approve", action="store_true", help="自动通过人工 Gate，用于端到端测试")
     run.add_argument("--execute-code", action="store_true", help="执行示例/真实代码修改")
     run.add_argument("--save-real-taskpath", action="store_true", help="真实模式下额外写入 TaskPath MCP")
+    run.add_argument("--inject-coding-defect", action="store_true", help="demo：首轮故意漏注册表，演示自修复")
+    run.add_argument("--max-repair-attempts", type=int, default=1, help="Critic/Reflection 最大自动修复次数")
     run.set_defaults(func=cmd_run)
 
     resume = sub.add_parser("resume", help="人工确认后继续执行")
@@ -118,6 +160,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     doctor = sub.add_parser("doctor", help="检查本地依赖路径")
     doctor.set_defaults(func=cmd_doctor)
+
+    graph = sub.add_parser("graph", help="导出 LangGraph Mermaid 状态图")
+    graph.add_argument("--output", help="可选：写入指定 md/mermaid 文件")
+    graph.set_defaults(func=cmd_graph)
 
     llm = sub.add_parser("llm-smoke", help="百炼模型冒烟测试")
     llm.set_defaults(func=cmd_llm_smoke)

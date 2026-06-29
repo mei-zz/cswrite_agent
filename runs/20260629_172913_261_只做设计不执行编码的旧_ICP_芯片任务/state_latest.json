@@ -1,0 +1,2384 @@
+{
+  "run_id": "20260629_172913_261",
+  "task": "只做设计不执行编码的旧 ICP 芯片任务",
+  "mode": "demo",
+  "llm_mode": "template",
+  "auto_approve": true,
+  "execute_code": false,
+  "save_real_taskpath": false,
+  "stage": "closed",
+  "task_slug": "只做设计不执行编码的旧_ICP_芯片任务",
+  "task_dir": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务",
+  "repo_dir": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo",
+  "approved_gates": [],
+  "pending_gate": "",
+  "messages": [
+    "初始化完成：run_id=20260629_172913_261",
+    "任务解析完成：VMODEL_TEST_8BIT / 旧 ICP。",
+    "Planner 完成：复杂度=low，自修复=False。",
+    "上下文检索完成。",
+    "需求评审已生成，等待人工确认。",
+    "需求已确认，进入架构设计。",
+    "架构设计已生成，等待人工确认。",
+    "架构已确认，进入详细设计。",
+    "详细设计已生成。",
+    "编码阶段完成：plan_only。",
+    "测试用例已生成，并保存为可编辑文件。",
+    "测试执行报告已生成，包含三层验证结果。",
+    "Critic 审查完成：fail，问题数=9。",
+    "V 模型追溯矩阵已生成。",
+    "Agent 观测报告已生成。",
+    "闭环摘要已生成，关键成功路径可进入记忆库。"
+  ],
+  "artifacts": {
+    "task_analysis": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\00_task_analysis.md",
+    "planner": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\00_planner.md",
+    "context_pack": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\00_context_pack.md",
+    "managed_context": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\00_managed_context.md",
+    "requirement_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\01_requirement_review.md",
+    "architecture_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\02_architecture_review.md",
+    "detailed_design": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\03_detailed_design.md",
+    "coding_record": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\04_coding_record.md",
+    "test_cases": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\05_test_cases.md",
+    "test_execution": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\06_test_execution.md",
+    "critic_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\10_critic_report.md",
+    "traceability_matrix": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\08_traceability_matrix.md",
+    "observability_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\09_observability_report.md",
+    "key_success_path": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\07_key_success_path.md"
+  },
+  "chip_spec": {
+    "chip_macro": "VMODEL_TEST_8BIT",
+    "chip_string_macro": "STR_VMODEL_TEST_8BIT",
+    "chip_value": "0x12",
+    "bit_width": 8,
+    "protocol": "old_icp",
+    "protocol_label": "旧 ICP",
+    "symbol_prefix": "vmodel_test_8bit",
+    "ops_symbol": "vmodel_test_8bit_ops",
+    "ops_macro": "OPS_VMODEL_TEST_8BIT",
+    "config_file": "src/common/config_8bit.h",
+    "registry_file": "src/common/cswrite_cfg_8bit.c",
+    "chip_file": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+    "reference_chip": "CSU32PX10",
+    "scope_note": "当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。"
+  },
+  "task_analysis": {
+    "input_task": "只做设计不执行编码的旧 ICP 芯片任务",
+    "chip_spec": {
+      "chip_macro": "VMODEL_TEST_8BIT",
+      "chip_string_macro": "STR_VMODEL_TEST_8BIT",
+      "chip_value": "0x12",
+      "bit_width": 8,
+      "protocol": "old_icp",
+      "protocol_label": "旧 ICP",
+      "symbol_prefix": "vmodel_test_8bit",
+      "ops_symbol": "vmodel_test_8bit_ops",
+      "ops_macro": "OPS_VMODEL_TEST_8BIT",
+      "config_file": "src/common/config_8bit.h",
+      "registry_file": "src/common/cswrite_cfg_8bit.c",
+      "chip_file": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+      "reference_chip": "CSU32PX10",
+      "scope_note": "当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。"
+    },
+    "llm_note": "未启用大模型模式，使用确定性解析结果。",
+    "agent_scenes": [
+      "自然语言任务结构化",
+      "LLM 风险审查",
+      "确定性规格驱动后续节点"
+    ]
+  },
+  "execution_plan": {
+    "complexity_score": 1,
+    "complexity_level": "low",
+    "complexity_reasons": [
+      "标准 8 位旧 ICP 新芯片接入"
+    ],
+    "mandatory_nodes": [
+      "task_analysis",
+      "retrieval",
+      "requirement_review",
+      "architecture_review",
+      "detailed_design",
+      "test_design",
+      "test_execution",
+      "critic",
+      "traceability_matrix",
+      "observability",
+      "closed"
+    ],
+    "conditional_nodes": {
+      "coding": false,
+      "reflection": false,
+      "human_gates": false
+    },
+    "repair_policy": {
+      "enabled": false,
+      "max_repair_attempts": 0,
+      "preferred_order": [
+        "coding",
+        "detailed_design"
+      ],
+      "stop_rule": "达到最大修复次数或 Critic 判定无可自动修复动作后进入闭环失败总结。"
+    }
+  },
+  "retrieval": {
+    "taskpaths": [],
+    "docs": [
+      {
+        "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\examples\\fake_docs\\0003_需求说明书.md",
+        "text": "# 0003 需求说明书\n\n新增 8 位旧 ICP 芯片时，需要复用现有旧 ICP 通信协议，不能误接 SPI 新协议。\n\n验收要求：\n\n- 能在软件侧识别芯片名称。\n- 能通过芯片操作表找到读 ID、擦除、编程三个回调。\n- 测试用例需要覆盖实现细节、架构链路和用户需求验收。\n\n"
+      },
+      {
+        "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\examples\\fake_docs\\0011_8位芯片烧录规范.md",
+        "text": "# 0011 8位芯片烧录规范\n\n旧 ICP 芯片需要通过 `io_icsp.h` 暴露的接口完成读 ID、擦除和编程。\n\n新增芯片时需要保持以下软件链路：\n\n1. 在 `config_8bit.h` 添加芯片编译宏和芯片名称 STR 宏。\n2. 在 `src/middlewave/program/chips/<CHIP>.c` 实现 `chip_operation` 回调。\n3. 在 `cswrite_cfg_8bit.c` 注册 extern、OPS 宏、芯片名称列表和 ops 列表。\n4. 芯片名称列表和 ops 列表必须同步维护，避免主机枚举和实际烧录操作错位。\n\n"
+      }
+    ],
+    "code": [
+      {
+        "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\chip_operation.h",
+        "snippet": "#ifndef CHIP_OPERATION_H\n#define CHIP_OPERATION_H\n\nstruct chip_operation {\n    int (*read_id)(void);\n    int (*erase)(void);\n    int (*program)(void);\n};\n\n#endif\n\n"
+      },
+      {
+        "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\config_8bit.h",
+        "snippet": "#ifndef CONFIG_8BIT_H\n#define CONFIG_8BIT_H\n\n#define CSU32PX10 0x10\n#define CSU38MX10 0x11\n/* CHIP_DEFINE_END */\n\n#define STR_CSU32PX10 \"CSU32PX10\"\n#define STR_CSU38MX10 \"CSU38MX10\"\n/* CHIP_STR_END */\n\n#endif\n\n"
+      },
+      {
+        "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\cswrite_cfg_8bit.c",
+        "snippet": "#include \"config_8bit.h\"\n#include \"chip_operation.h\"\n\nextern const struct chip_operation csu32px10_ops;\nextern const struct chip_operation csu38mx10_ops;\n/* EXTERN_END */\n\n#define OPS_CSU32PX10 (&csu32px10_ops)\n#define OPS_CSU38MX10 (&csu38mx10_ops)\n/* OPS_DEFINE_END */\n\nconst char *cswrite_chip_list[] = {\n    STR_CSU32PX10,\n    STR_CSU38MX10,\n/* CHIP_LIST_END */\n};\n\nconst struct chip_operation *cswrite_chip_ops_list[] = {\n    OPS_CSU32PX10,\n    OPS_CSU38MX10,\n/* OPS_LIST_END */\n};\n\n"
+      },
+      {
+        "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\middlewave\\program\\chips\\CSU32PX10.c",
+        "snippet": "#include \"io_icsp.h\"\n#include \"chip_operation.h\"\n\nstatic int csu32px10_read_id(void) { return io_icsp_read_id(); }\nstatic int csu32px10_erase(void) { return io_icsp_chip_erase(); }\nstatic int csu32px10_program(void) { return io_icsp_program(); }\n\nconst struct chip_operation csu32px10_ops = {\n    .read_id = csu32px10_read_id,\n    .erase = csu32px10_erase,\n    .program = csu32px10_program,\n};\n\n"
+      },
+      {
+        "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\middlewave\\program\\chips\\io_icsp.h",
+        "snippet": "#ifndef IO_ICSP_H\n#define IO_ICSP_H\n\nint io_icsp_read_id(void);\nint io_icsp_chip_erase(void);\nint io_icsp_program(void);\n\n#endif\n\n"
+      }
+    ],
+    "diagnostics": [
+      "demo 模式：使用 examples/fake_docs 与示例仓库检索。"
+    ],
+    "memories": [
+      {
+        "summary": "一次完整 V 模型研发闭环成功执行。",
+        "chip_spec": {
+          "chip_macro": "VMODEL_TEST_8BIT",
+          "chip_string_macro": "STR_VMODEL_TEST_8BIT",
+          "chip_value": "0x12",
+          "bit_width": 8,
+          "protocol": "old_icp",
+          "protocol_label": "旧 ICP",
+          "symbol_prefix": "vmodel_test_8bit",
+          "ops_symbol": "vmodel_test_8bit_ops",
+          "ops_macro": "OPS_VMODEL_TEST_8BIT",
+          "config_file": "src/common/config_8bit.h",
+          "registry_file": "src/common/cswrite_cfg_8bit.c",
+          "chip_file": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+          "reference_chip": "CSU32PX10",
+          "scope_note": "当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。"
+        },
+        "artifacts": {
+          "task_analysis": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\00_task_analysis.md",
+          "planner": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\00_planner.md",
+          "context_pack": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\00_context_pack.md",
+          "managed_context": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\00_managed_context.md",
+          "requirement_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\01_requirement_review.md",
+          "architecture_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\02_architecture_review.md",
+          "detailed_design": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\03_detailed_design.md",
+          "coding_record": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\04_coding_record.md",
+          "test_cases": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\05_test_cases.md",
+          "test_execution": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\06_test_execution.md",
+          "critic_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\10_critic_report.md",
+          "traceability_matrix": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\08_traceability_matrix.md",
+          "observability_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\09_observability_report.md",
+          "key_success_path": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\07_key_success_path.md"
+        },
+        "verification": {
+          "execution_mode": "dry_run",
+          "test_runner_status": "dry_run_completed",
+          "verification_results_by_level": {
+            "detail_design_verification": [
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD1",
+                "result": "pass",
+                "evidence": "src/common/config_8bit.h 包含 VMODEL_TEST_8BIT",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD1",
+                "result": "pass",
+                "evidence": "src/common/config_8bit.h 包含 STR_VMODEL_TEST_8BIT",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD2",
+                "result": "pass",
+                "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 包含 io_icsp.h",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD2",
+                "result": "pass",
+                "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 包含 vmodel_test_8bit_ops",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD3",
+                "result": "pass",
+                "evidence": "src/common/cswrite_cfg_8bit.c 包含 OPS_VMODEL_TEST_8BIT",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD3",
+                "result": "pass",
+                "evidence": "src/common/cswrite_cfg_8bit.c 包含 STR_VMODEL_TEST_8BIT",
+                "defect_or_next_action": ""
+              }
+            ],
+            "architecture_verification": [
+              {
+                "verify_level": "architecture_verification",
+                "target": "A1+A2+A3",
+                "result": "pass",
+                "evidence": "VMODEL_TEST_8BIT 宏定义、芯片实现、注册表三层均存在",
+                "defect_or_next_action": ""
+              }
+            ],
+            "requirement_acceptance": [
+              {
+                "verify_level": "requirement_acceptance",
+                "target": "R1",
+                "result": "pass",
+                "evidence": "demo 静态检查证明软件链路完整；真实烧录需后续接入专用测试环境。",
+                "defect_or_next_action": "真实环境接入后补充 real_tool 结果"
+              },
+              {
+                "verify_level": "requirement_acceptance",
+                "target": "R2",
+                "result": "pass",
+                "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 包含 io_icsp",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "requirement_acceptance",
+                "target": "R3",
+                "result": "pass",
+                "evidence": "测试用例按 detail_design_verification / architecture_verification / requirement_acceptance 三层生成。",
+                "defect_or_next_action": ""
+              }
+            ]
+          },
+          "complete_enough_for_demo": true
+        },
+        "_memory_type": "episodic",
+        "_memory_key": "run:20260629_172912_557",
+        "_memory_run_id": "20260629_172912_557",
+        "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_TEST_8BIT，验证完整研发流程",
+        "_memory_source_stage": "closed",
+        "_memory_confidence": 0.85,
+        "_memory_tags": [
+          "VMODEL_TEST_8BIT",
+          "旧 ICP",
+          "8bit",
+          "vmodel",
+          "cswrite"
+        ],
+        "_memory_score": 6.85,
+        "_created_at": "2026-06-29T17:29:12"
+      },
+      {
+        "procedure": "相似新增 旧 ICP 芯片任务可复用三步注册模式：src/common/config_8bit.h -> src/middlewave/program/chips/VMODEL_TEST_8BIT.c -> src/common/cswrite_cfg_8bit.c。",
+        "traceability_matrix": {
+          "complete": true,
+          "rows": [
+            {
+              "requirement_id": "R1",
+              "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+              "architecture_ids": "A1, A2, A3",
+              "detail_design_ids": "DD1, DD2, DD3",
+              "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+              "test_cases": "TC-ARCH-001, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            },
+            {
+              "requirement_id": "R2",
+              "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+              "architecture_ids": "A2",
+              "detail_design_ids": "DD2",
+              "code_files": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+              "test_cases": "TC-DD-002, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            },
+            {
+              "requirement_id": "R3",
+              "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+              "architecture_ids": "A3",
+              "detail_design_ids": "DD3",
+              "code_files": "src/common/cswrite_cfg_8bit.c",
+              "test_cases": "TC-DD-003, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            }
+          ],
+          "gaps": []
+        },
+        "pitfalls": [
+          "不要只完成编码验证就保存成功路径。",
+          "名称列表和 ops 列表必须同步维护，否则 UI 展示和操作调度会错位。",
+          "真实测试环境未接入时必须标记 dry_run/manual/hardware-required。"
+        ],
+        "_memory_type": "procedural",
+        "_memory_key": "procedure:old_icp:8",
+        "_memory_run_id": "20260629_172912_557",
+        "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_TEST_8BIT，验证完整研发流程",
+        "_memory_source_stage": "closed",
+        "_memory_confidence": 0.9,
+        "_memory_tags": [
+          "VMODEL_TEST_8BIT",
+          "旧 ICP",
+          "8bit",
+          "vmodel",
+          "cswrite",
+          "success_path"
+        ],
+        "_memory_score": 5.9,
+        "_created_at": "2026-06-29T17:29:12"
+      },
+      {
+        "summary": "一次完整 V 模型研发闭环成功执行。",
+        "chip_spec": {
+          "chip_macro": "VMODEL_REPAIR_8BIT",
+          "chip_string_macro": "STR_VMODEL_REPAIR_8BIT",
+          "chip_value": "0x12",
+          "bit_width": 8,
+          "protocol": "old_icp",
+          "protocol_label": "旧 ICP",
+          "symbol_prefix": "vmodel_repair_8bit",
+          "ops_symbol": "vmodel_repair_8bit_ops",
+          "ops_macro": "OPS_VMODEL_REPAIR_8BIT",
+          "config_file": "src/common/config_8bit.h",
+          "registry_file": "src/common/cswrite_cfg_8bit.c",
+          "chip_file": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+          "reference_chip": "CSU32PX10",
+          "scope_note": "当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。"
+        },
+        "artifacts": {
+          "task_analysis": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\00_task_analysis.md",
+          "planner": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\00_planner.md",
+          "context_pack": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\00_context_pack.md",
+          "managed_context": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\00_managed_context.md",
+          "requirement_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\01_requirement_review.md",
+          "architecture_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\02_architecture_review.md",
+          "detailed_design": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\03_detailed_design.md",
+          "coding_record": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\04_coding_record.md",
+          "test_cases": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\05_test_cases.md",
+          "test_execution": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\06_test_execution.md",
+          "critic_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\10_critic_report.md",
+          "reflection_attempt_1": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\11_reflection_attempt_1.md",
+          "traceability_matrix": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\08_traceability_matrix.md",
+          "observability_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\09_observability_report.md",
+          "key_success_path": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\07_key_success_path.md"
+        },
+        "verification": {
+          "execution_mode": "dry_run",
+          "test_runner_status": "dry_run_completed",
+          "verification_results_by_level": {
+            "detail_design_verification": [
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD1",
+                "result": "pass",
+                "evidence": "src/common/config_8bit.h 包含 VMODEL_REPAIR_8BIT",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD1",
+                "result": "pass",
+                "evidence": "src/common/config_8bit.h 包含 STR_VMODEL_REPAIR_8BIT",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD2",
+                "result": "pass",
+                "evidence": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c 包含 io_icsp.h",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD2",
+                "result": "pass",
+                "evidence": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c 包含 vmodel_repair_8bit_ops",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD3",
+                "result": "pass",
+                "evidence": "src/common/cswrite_cfg_8bit.c 包含 OPS_VMODEL_REPAIR_8BIT",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "detail_design_verification",
+                "target": "DD3",
+                "result": "pass",
+                "evidence": "src/common/cswrite_cfg_8bit.c 包含 STR_VMODEL_REPAIR_8BIT",
+                "defect_or_next_action": ""
+              }
+            ],
+            "architecture_verification": [
+              {
+                "verify_level": "architecture_verification",
+                "target": "A1+A2+A3",
+                "result": "pass",
+                "evidence": "VMODEL_REPAIR_8BIT 宏定义、芯片实现、注册表三层均存在",
+                "defect_or_next_action": ""
+              }
+            ],
+            "requirement_acceptance": [
+              {
+                "verify_level": "requirement_acceptance",
+                "target": "R1",
+                "result": "pass",
+                "evidence": "demo 静态检查证明软件链路完整；真实烧录需后续接入专用测试环境。",
+                "defect_or_next_action": "真实环境接入后补充 real_tool 结果"
+              },
+              {
+                "verify_level": "requirement_acceptance",
+                "target": "R2",
+                "result": "pass",
+                "evidence": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c 包含 io_icsp",
+                "defect_or_next_action": ""
+              },
+              {
+                "verify_level": "requirement_acceptance",
+                "target": "R3",
+                "result": "pass",
+                "evidence": "测试用例按 detail_design_verification / architecture_verification / requirement_acceptance 三层生成。",
+                "defect_or_next_action": ""
+              }
+            ]
+          },
+          "complete_enough_for_demo": true
+        },
+        "_memory_type": "episodic",
+        "_memory_key": "run:20260629_172912_862",
+        "_memory_run_id": "20260629_172912_862",
+        "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_REPAIR_8BIT，验证自修复流程",
+        "_memory_source_stage": "closed",
+        "_memory_confidence": 0.85,
+        "_memory_tags": [
+          "VMODEL_REPAIR_8BIT",
+          "旧 ICP",
+          "8bit",
+          "vmodel",
+          "cswrite"
+        ],
+        "_memory_score": 5.85,
+        "_created_at": "2026-06-29T17:29:13"
+      },
+      {
+        "procedure": "相似新增 旧 ICP 芯片任务可复用三步注册模式：src/common/config_8bit.h -> src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c -> src/common/cswrite_cfg_8bit.c。",
+        "traceability_matrix": {
+          "complete": true,
+          "rows": [
+            {
+              "requirement_id": "R1",
+              "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_REPAIR_8BIT 的软件侧支持。",
+              "architecture_ids": "A1, A2, A3",
+              "detail_design_ids": "DD1, DD2, DD3",
+              "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+              "test_cases": "TC-ARCH-001, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            },
+            {
+              "requirement_id": "R2",
+              "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+              "architecture_ids": "A2",
+              "detail_design_ids": "DD2",
+              "code_files": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+              "test_cases": "TC-DD-002, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            },
+            {
+              "requirement_id": "R3",
+              "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+              "architecture_ids": "A3",
+              "detail_design_ids": "DD3",
+              "code_files": "src/common/cswrite_cfg_8bit.c",
+              "test_cases": "TC-DD-003, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            }
+          ],
+          "gaps": []
+        },
+        "pitfalls": [
+          "不要只完成编码验证就保存成功路径。",
+          "名称列表和 ops 列表必须同步维护，否则 UI 展示和操作调度会错位。",
+          "真实测试环境未接入时必须标记 dry_run/manual/hardware-required。"
+        ],
+        "_memory_type": "procedural",
+        "_memory_key": "procedure:old_icp:8",
+        "_memory_run_id": "20260629_172912_862",
+        "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_REPAIR_8BIT，验证自修复流程",
+        "_memory_source_stage": "closed",
+        "_memory_confidence": 0.9,
+        "_memory_tags": [
+          "VMODEL_REPAIR_8BIT",
+          "旧 ICP",
+          "8bit",
+          "vmodel",
+          "cswrite",
+          "success_path"
+        ],
+        "_memory_score": 4.9,
+        "_created_at": "2026-06-29T17:29:13"
+      },
+      {
+        "fact": "旧 ICP 新芯片接入需要同时维护宏定义、芯片实现、名称列表和 ops 列表。",
+        "evidence": [
+          {
+            "requirement_id": "R1",
+            "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+            "architecture_ids": "A1, A2, A3",
+            "detail_design_ids": "DD1, DD2, DD3",
+            "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+            "test_cases": "TC-ARCH-001, TC-REQ-001",
+            "execution_result": "pass",
+            "trace_status": "pass"
+          },
+          {
+            "requirement_id": "R2",
+            "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+            "architecture_ids": "A2",
+            "detail_design_ids": "DD2",
+            "code_files": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+            "test_cases": "TC-DD-002, TC-REQ-001",
+            "execution_result": "pass",
+            "trace_status": "pass"
+          },
+          {
+            "requirement_id": "R3",
+            "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+            "architecture_ids": "A3",
+            "detail_design_ids": "DD3",
+            "code_files": "src/common/cswrite_cfg_8bit.c",
+            "test_cases": "TC-DD-003, TC-REQ-001",
+            "execution_result": "pass",
+            "trace_status": "pass"
+          }
+        ],
+        "_memory_type": "semantic",
+        "_memory_key": "rule:old_icp:registration",
+        "_memory_run_id": "20260629_172912_557",
+        "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_TEST_8BIT，验证完整研发流程",
+        "_memory_source_stage": "closed",
+        "_memory_confidence": 0.8,
+        "_memory_tags": [
+          "VMODEL_TEST_8BIT",
+          "旧 ICP",
+          "8bit",
+          "vmodel",
+          "cswrite",
+          "domain_rule"
+        ],
+        "_memory_score": 4.8,
+        "_created_at": "2026-06-29T17:29:12"
+      },
+      {
+        "fact": "旧 ICP 新芯片接入需要同时维护宏定义、芯片实现、名称列表和 ops 列表。",
+        "evidence": [
+          {
+            "requirement_id": "R1",
+            "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_REPAIR_8BIT 的软件侧支持。",
+            "architecture_ids": "A1, A2, A3",
+            "detail_design_ids": "DD1, DD2, DD3",
+            "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+            "test_cases": "TC-ARCH-001, TC-REQ-001",
+            "execution_result": "pass",
+            "trace_status": "pass"
+          },
+          {
+            "requirement_id": "R2",
+            "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+            "architecture_ids": "A2",
+            "detail_design_ids": "DD2",
+            "code_files": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+            "test_cases": "TC-DD-002, TC-REQ-001",
+            "execution_result": "pass",
+            "trace_status": "pass"
+          },
+          {
+            "requirement_id": "R3",
+            "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+            "architecture_ids": "A3",
+            "detail_design_ids": "DD3",
+            "code_files": "src/common/cswrite_cfg_8bit.c",
+            "test_cases": "TC-DD-003, TC-REQ-001",
+            "execution_result": "pass",
+            "trace_status": "pass"
+          }
+        ],
+        "_memory_type": "semantic",
+        "_memory_key": "rule:old_icp:registration",
+        "_memory_run_id": "20260629_172912_862",
+        "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_REPAIR_8BIT，验证自修复流程",
+        "_memory_source_stage": "closed",
+        "_memory_confidence": 0.8,
+        "_memory_tags": [
+          "VMODEL_REPAIR_8BIT",
+          "旧 ICP",
+          "8bit",
+          "vmodel",
+          "cswrite",
+          "domain_rule"
+        ],
+        "_memory_score": 3.8,
+        "_created_at": "2026-06-29T17:29:13"
+      }
+    ]
+  },
+  "managed_context": {
+    "budget": {
+      "max_items_per_source": 6,
+      "max_chars_per_item": 900,
+      "max_total_chars": 9000,
+      "selected_total_chars": 8472
+    },
+    "keywords": [
+      "VMODEL_TEST_8BIT",
+      "STR_VMODEL_TEST_8BIT",
+      "OPS_VMODEL_TEST_8BIT",
+      "src/common/config_8bit.h",
+      "src/common/cswrite_cfg_8bit.c",
+      "io_icsp",
+      "chip_operation",
+      "旧 ICP"
+    ],
+    "coverage": {
+      "required_keywords": [
+        "VMODEL_TEST_8BIT",
+        "STR_VMODEL_TEST_8BIT",
+        "OPS_VMODEL_TEST_8BIT",
+        "src/common/config_8bit.h",
+        "src/common/cswrite_cfg_8bit.c",
+        "io_icsp",
+        "chip_operation",
+        "旧 ICP"
+      ],
+      "hit_keywords": [
+        "VMODEL_TEST_8BIT",
+        "STR_VMODEL_TEST_8BIT",
+        "OPS_VMODEL_TEST_8BIT",
+        "src/common/config_8bit.h",
+        "src/common/cswrite_cfg_8bit.c",
+        "io_icsp",
+        "chip_operation",
+        "旧 ICP"
+      ],
+      "missed_keywords": [],
+      "coverage_ratio": 1.0
+    },
+    "conflicts": [],
+    "selected_evidence": [
+      {
+        "source_type": "memories",
+        "source": "memories_0",
+        "score": 6.0,
+        "char_count": 900,
+        "snippet": "{\"summary\": \"一次完整 V 模型研发闭环成功执行。\", \"chip_spec\": {\"chip_macro\": \"VMODEL_TEST_8BIT\", \"chip_string_macro\": \"STR_VMODEL_TEST_8BIT\", \"chip_value\": \"0x12\", \"bit_width\": 8, \"protocol\": \"old_icp\", \"protocol_label\": \"旧 ICP\", \"symbol_prefix\": \"vmodel_test_8bit\", \"ops_symbol\": \"vmodel_test_8bit_ops\", \"ops_macro\": \"OPS_VMODEL_TEST_8BIT\", \"config_file\": \"src/common/config_8bit.h\", \"registry_file\": \"src/common/cswrite_cfg_8bit.c\", \"chip_file\": \"src/middlewave/program/chips/VMODEL_TEST_8BIT.c\", \"reference_chip\": \"CSU32PX10\", \"scope_note\": \"当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。\"}, \"artifacts\": {\"task_analysis\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\runs\\\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\\\00_task_analysis.md\", \"planner\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\runs\\\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_"
+      },
+      {
+        "source_type": "memories",
+        "source": "memories_1",
+        "score": 4.0,
+        "char_count": 900,
+        "snippet": "{\"procedure\": \"相似新增 旧 ICP 芯片任务可复用三步注册模式：src/common/config_8bit.h -> src/middlewave/program/chips/VMODEL_TEST_8BIT.c -> src/common/cswrite_cfg_8bit.c。\", \"traceability_matrix\": {\"complete\": true, \"rows\": [{\"requirement_id\": \"R1\", \"requirement\": \"新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。\", \"architecture_ids\": \"A1, A2, A3\", \"detail_design_ids\": \"DD1, DD2, DD3\", \"code_files\": \"src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c\", \"test_cases\": \"TC-ARCH-001, TC-REQ-001\", \"execution_result\": \"pass\", \"trace_status\": \"pass\"}, {\"requirement_id\": \"R2\", \"requirement\": \"实现时必须复用 旧 ICP 通信协议，不误用其他新协议。\", \"architecture_ids\": \"A2\", \"detail_design_ids\": \"DD2\", \"code_files\": \"src/middlewave/program/chips/VMODEL_TEST_8BIT.c\", \"test_cases\": \"TC-DD-002, TC-REQ-001\", \"execution_result\": \"pass\", \"trace_status\": \"pass\"}, {\"requirement_id\": \"R3\", \"requirement\""
+      },
+      {
+        "source_type": "memories",
+        "source": "memories_4",
+        "score": 4.0,
+        "char_count": 900,
+        "snippet": "{\"fact\": \"旧 ICP 新芯片接入需要同时维护宏定义、芯片实现、名称列表和 ops 列表。\", \"evidence\": [{\"requirement_id\": \"R1\", \"requirement\": \"新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。\", \"architecture_ids\": \"A1, A2, A3\", \"detail_design_ids\": \"DD1, DD2, DD3\", \"code_files\": \"src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c\", \"test_cases\": \"TC-ARCH-001, TC-REQ-001\", \"execution_result\": \"pass\", \"trace_status\": \"pass\"}, {\"requirement_id\": \"R2\", \"requirement\": \"实现时必须复用 旧 ICP 通信协议，不误用其他新协议。\", \"architecture_ids\": \"A2\", \"detail_design_ids\": \"DD2\", \"code_files\": \"src/middlewave/program/chips/VMODEL_TEST_8BIT.c\", \"test_cases\": \"TC-DD-002, TC-REQ-001\", \"execution_result\": \"pass\", \"trace_status\": \"pass\"}, {\"requirement_id\": \"R3\", \"requirement\": \"测试必须覆盖编码实现、架构设计和需求验收三层。\", \"architecture_ids\": \"A3\", \"detail_design_ids\": \"DD3\", \"code_files\": \"src/common/cswrite_cfg_8bit.c\", \"test_ca"
+      },
+      {
+        "source_type": "memories",
+        "source": "memories_2",
+        "score": 3.0,
+        "char_count": 900,
+        "snippet": "{\"summary\": \"一次完整 V 模型研发闭环成功执行。\", \"chip_spec\": {\"chip_macro\": \"VMODEL_REPAIR_8BIT\", \"chip_string_macro\": \"STR_VMODEL_REPAIR_8BIT\", \"chip_value\": \"0x12\", \"bit_width\": 8, \"protocol\": \"old_icp\", \"protocol_label\": \"旧 ICP\", \"symbol_prefix\": \"vmodel_repair_8bit\", \"ops_symbol\": \"vmodel_repair_8bit_ops\", \"ops_macro\": \"OPS_VMODEL_REPAIR_8BIT\", \"config_file\": \"src/common/config_8bit.h\", \"registry_file\": \"src/common/cswrite_cfg_8bit.c\", \"chip_file\": \"src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c\", \"reference_chip\": \"CSU32PX10\", \"scope_note\": \"当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。\"}, \"artifacts\": {\"task_analysis\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\runs\\\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\\\00_task_analysis.md\", \"planner\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\runs\\\\20260629_172912_862_新增一个测试用_"
+      },
+      {
+        "source_type": "memories",
+        "source": "memories_3",
+        "score": 3.0,
+        "char_count": 900,
+        "snippet": "{\"procedure\": \"相似新增 旧 ICP 芯片任务可复用三步注册模式：src/common/config_8bit.h -> src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c -> src/common/cswrite_cfg_8bit.c。\", \"traceability_matrix\": {\"complete\": true, \"rows\": [{\"requirement_id\": \"R1\", \"requirement\": \"新增 8 位 旧 ICP 芯片 VMODEL_REPAIR_8BIT 的软件侧支持。\", \"architecture_ids\": \"A1, A2, A3\", \"detail_design_ids\": \"DD1, DD2, DD3\", \"code_files\": \"src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c\", \"test_cases\": \"TC-ARCH-001, TC-REQ-001\", \"execution_result\": \"pass\", \"trace_status\": \"pass\"}, {\"requirement_id\": \"R2\", \"requirement\": \"实现时必须复用 旧 ICP 通信协议，不误用其他新协议。\", \"architecture_ids\": \"A2\", \"detail_design_ids\": \"DD2\", \"code_files\": \"src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c\", \"test_cases\": \"TC-DD-002, TC-REQ-001\", \"execution_result\": \"pass\", \"trace_status\": \"pass\"}, {\"requirement_id\": \"R3\", \"requ"
+      },
+      {
+        "source_type": "memories",
+        "source": "memories_5",
+        "score": 3.0,
+        "char_count": 900,
+        "snippet": "{\"fact\": \"旧 ICP 新芯片接入需要同时维护宏定义、芯片实现、名称列表和 ops 列表。\", \"evidence\": [{\"requirement_id\": \"R1\", \"requirement\": \"新增 8 位 旧 ICP 芯片 VMODEL_REPAIR_8BIT 的软件侧支持。\", \"architecture_ids\": \"A1, A2, A3\", \"detail_design_ids\": \"DD1, DD2, DD3\", \"code_files\": \"src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c\", \"test_cases\": \"TC-ARCH-001, TC-REQ-001\", \"execution_result\": \"pass\", \"trace_status\": \"pass\"}, {\"requirement_id\": \"R2\", \"requirement\": \"实现时必须复用 旧 ICP 通信协议，不误用其他新协议。\", \"architecture_ids\": \"A2\", \"detail_design_ids\": \"DD2\", \"code_files\": \"src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c\", \"test_cases\": \"TC-DD-002, TC-REQ-001\", \"execution_result\": \"pass\", \"trace_status\": \"pass\"}, {\"requirement_id\": \"R3\", \"requirement\": \"测试必须覆盖编码实现、架构设计和需求验收三层。\", \"architecture_ids\": \"A3\", \"detail_design_ids\": \"DD3\", \"code_files\": \"src/common/cswrite_cfg_8bit.c\", \"t"
+      },
+      {
+        "source_type": "docs",
+        "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\examples\\fake_docs\\0011_8位芯片烧录规范.md",
+        "score": 3.0,
+        "char_count": 433,
+        "snippet": "{\"source\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\examples\\\\fake_docs\\\\0011_8位芯片烧录规范.md\", \"text\": \"# 0011 8位芯片烧录规范\\n\\n旧 ICP 芯片需要通过 `io_icsp.h` 暴露的接口完成读 ID、擦除和编程。\\n\\n新增芯片时需要保持以下软件链路：\\n\\n1. 在 `config_8bit.h` 添加芯片编译宏和芯片名称 STR 宏。\\n2. 在 `src/middlewave/program/chips/<CHIP>.c` 实现 `chip_operation` 回调。\\n3. 在 `cswrite_cfg_8bit.c` 注册 extern、OPS 宏、芯片名称列表和 ops 列表。\\n4. 芯片名称列表和 ops 列表必须同步维护，避免主机枚举和实际烧录操作错位。\\n\\n\"}"
+      },
+      {
+        "source_type": "code",
+        "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\middlewave\\program\\chips\\CSU32PX10.c",
+        "score": 2.0,
+        "char_count": 597,
+        "snippet": "{\"file\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\runs\\\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\\\repo\\\\src\\\\middlewave\\\\program\\\\chips\\\\CSU32PX10.c\", \"snippet\": \"#include \\\"io_icsp.h\\\"\\n#include \\\"chip_operation.h\\\"\\n\\nstatic int csu32px10_read_id(void) { return io_icsp_read_id(); }\\nstatic int csu32px10_erase(void) { return io_icsp_chip_erase(); }\\nstatic int csu32px10_program(void) { return io_icsp_program(); }\\n\\nconst struct chip_operation csu32px10_ops = {\\n .read_id = csu32px10_read_id,\\n .erase = csu32px10_erase,\\n .program = csu32px10_program,\\n};\\n\\n\"}"
+      },
+      {
+        "source_type": "docs",
+        "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\examples\\fake_docs\\0003_需求说明书.md",
+        "score": 1.0,
+        "char_count": 280,
+        "snippet": "{\"source\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\examples\\\\fake_docs\\\\0003_需求说明书.md\", \"text\": \"# 0003 需求说明书\\n\\n新增 8 位旧 ICP 芯片时，需要复用现有旧 ICP 通信协议，不能误接 SPI 新协议。\\n\\n验收要求：\\n\\n- 能在软件侧识别芯片名称。\\n- 能通过芯片操作表找到读 ID、擦除、编程三个回调。\\n- 测试用例需要覆盖实现细节、架构链路和用户需求验收。\\n\\n\"}"
+      },
+      {
+        "source_type": "code",
+        "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\chip_operation.h",
+        "score": 1.0,
+        "char_count": 344,
+        "snippet": "{\"file\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\runs\\\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\\\repo\\\\src\\\\common\\\\chip_operation.h\", \"snippet\": \"#ifndef CHIP_OPERATION_H\\n#define CHIP_OPERATION_H\\n\\nstruct chip_operation {\\n int (*read_id)(void);\\n int (*erase)(void);\\n int (*program)(void);\\n};\\n\\n#endif\\n\\n\"}"
+      },
+      {
+        "source_type": "code",
+        "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\cswrite_cfg_8bit.c",
+        "score": 1.0,
+        "char_count": 684,
+        "snippet": "{\"file\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\runs\\\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\\\repo\\\\src\\\\common\\\\cswrite_cfg_8bit.c\", \"snippet\": \"#include \\\"config_8bit.h\\\"\\n#include \\\"chip_operation.h\\\"\\n\\nextern const struct chip_operation csu32px10_ops;\\nextern const struct chip_operation csu38mx10_ops;\\n/* EXTERN_END */\\n\\n#define OPS_CSU32PX10 (&csu32px10_ops)\\n#define OPS_CSU38MX10 (&csu38mx10_ops)\\n/* OPS_DEFINE_END */\\n\\nconst char *cswrite_chip_list[] = {\\n STR_CSU32PX10,\\n STR_CSU38MX10,\\n/* CHIP_LIST_END */\\n};\\n\\nconst struct chip_operation *cswrite_chip_ops_list[] = {\\n OPS_CSU32PX10,\\n OPS_CSU38MX10,\\n/* OPS_LIST_END */\\n};\\n\\n\"}"
+      },
+      {
+        "source_type": "code",
+        "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\middlewave\\program\\chips\\io_icsp.h",
+        "score": 1.0,
+        "char_count": 331,
+        "snippet": "{\"file\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\runs\\\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\\\repo\\\\src\\\\middlewave\\\\program\\\\chips\\\\io_icsp.h\", \"snippet\": \"#ifndef IO_ICSP_H\\n#define IO_ICSP_H\\n\\nint io_icsp_read_id(void);\\nint io_icsp_chip_erase(void);\\nint io_icsp_program(void);\\n\\n#endif\\n\\n\"}"
+      },
+      {
+        "source_type": "code",
+        "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\config_8bit.h",
+        "score": 0.0,
+        "char_count": 403,
+        "snippet": "{\"file\": \"C:\\\\Users\\\\meigang90240\\\\Desktop\\\\烧录器agent\\\\langgraph_cswrite_agent\\\\runs\\\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\\\repo\\\\src\\\\common\\\\config_8bit.h\", \"snippet\": \"#ifndef CONFIG_8BIT_H\\n#define CONFIG_8BIT_H\\n\\n#define CSU32PX10 0x10\\n#define CSU38MX10 0x11\\n/* CHIP_DEFINE_END */\\n\\n#define STR_CSU32PX10 \\\"CSU32PX10\\\"\\n#define STR_CSU38MX10 \\\"CSU38MX10\\\"\\n/* CHIP_STR_END */\\n\\n#endif\\n\\n\"}"
+      }
+    ],
+    "evidence_count": 13,
+    "selected_count": 13
+  },
+  "requirement_items": [
+    {
+      "req_id": "R1",
+      "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+      "source_evidence": "任务输入 + 旧 ICP 芯片参考实现 + 8 位烧录规范 + 上下文检索结果",
+      "acceptance_criteria": "src/common/config_8bit.h 中存在芯片宏与名称宏，src/middlewave/program/chips/VMODEL_TEST_8BIT.c 存在实现文件，src/common/cswrite_cfg_8bit.c 完成 ops 注册。",
+      "user_confirmation": "approved",
+      "status": "approved"
+    },
+    {
+      "req_id": "R2",
+      "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+      "source_evidence": "io_icsp 旧 ICP 接口、chip_operation 回调与参考芯片实现",
+      "acceptance_criteria": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 引用 io_icsp.h，read_id/erase/program 回调均走旧 ICP 风格接口。",
+      "user_confirmation": "approved",
+      "status": "approved"
+    },
+    {
+      "req_id": "R3",
+      "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+      "source_evidence": "当前工作流规则",
+      "acceptance_criteria": "05_test_cases.md 与 06_test_execution.md 均按三层分组。",
+      "user_confirmation": "approved",
+      "status": "approved"
+    }
+  ],
+  "architecture_layers": [
+    {
+      "arch_id": "A1",
+      "linked_requirement": "R1",
+      "layer_module": "芯片编译宏与名称层",
+      "design_decision": "在 src/common/config_8bit.h 新增 VMODEL_TEST_8BIT 和 STR_VMODEL_TEST_8BIT。",
+      "interface_dependency": "被 src/common/cswrite_cfg_8bit.c 和 UI/配置层引用。",
+      "user_confirmation": "approved",
+      "status": "approved"
+    },
+    {
+      "arch_id": "A2",
+      "linked_requirement": "R1,R2",
+      "layer_module": "芯片操作实现层",
+      "design_decision": "新增 src/middlewave/program/chips/VMODEL_TEST_8BIT.c，按 chip_operation 回调模板实现。",
+      "interface_dependency": "依赖 io_icsp.h 的 旧 ICP 通信接口。",
+      "user_confirmation": "approved",
+      "status": "approved"
+    },
+    {
+      "arch_id": "A3",
+      "linked_requirement": "R1,R3",
+      "layer_module": "注册与调度层",
+      "design_decision": "在 src/common/cswrite_cfg_8bit.c 注册 extern、OPS_VMODEL_TEST_8BIT、名称列表和 ops 列表。",
+      "interface_dependency": "名称列表与 ops 列表索引必须一致。",
+      "user_confirmation": "approved",
+      "status": "approved"
+    }
+  ],
+  "detailed_design_items": [
+    {
+      "dd_id": "DD1",
+      "linked_arch": "A1",
+      "file": "src/common/config_8bit.h",
+      "operation": "新增 #define VMODEL_TEST_8BIT 0x12，并添加 STR_VMODEL_TEST_8BIT。",
+      "symbols": "VMODEL_TEST_8BIT, STR_VMODEL_TEST_8BIT",
+      "verification_point": "宏可被 Select-String 检索到。"
+    },
+    {
+      "dd_id": "DD2",
+      "linked_arch": "A2",
+      "file": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+      "operation": "新增芯片实现，包含 io_icsp.h 和 chip_operation 回调结构体。",
+      "symbols": "vmodel_test_8bit_ops, chip_operation",
+      "verification_point": "文件存在且包含 io_icsp.h、read_id、program、erase。"
+    },
+    {
+      "dd_id": "DD3",
+      "linked_arch": "A3",
+      "file": "src/common/cswrite_cfg_8bit.c",
+      "operation": "注册 extern、OPS 宏、芯片名称列表和 ops 列表。",
+      "symbols": "OPS_VMODEL_TEST_8BIT, cswrite_chip_list, cswrite_chip_ops_list",
+      "verification_point": "名称列表和 ops 列表都包含新芯片。"
+    }
+  ],
+  "coding_status": "plan_only",
+  "coding_record": {
+    "chip_spec": {
+      "chip_macro": "VMODEL_TEST_8BIT",
+      "chip_string_macro": "STR_VMODEL_TEST_8BIT",
+      "chip_value": "0x12",
+      "bit_width": 8,
+      "protocol": "old_icp",
+      "protocol_label": "旧 ICP",
+      "symbol_prefix": "vmodel_test_8bit",
+      "ops_symbol": "vmodel_test_8bit_ops",
+      "ops_macro": "OPS_VMODEL_TEST_8BIT",
+      "config_file": "src/common/config_8bit.h",
+      "registry_file": "src/common/cswrite_cfg_8bit.c",
+      "chip_file": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+      "reference_chip": "CSU32PX10",
+      "scope_note": "当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。"
+    },
+    "modified_files": [
+      "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\config_8bit.h",
+      "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\middlewave\\program\\chips\\VMODEL_TEST_8BIT.c",
+      "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\cswrite_cfg_8bit.c"
+    ],
+    "commands": [],
+    "notes": [
+      "当前未开启 execute_code，仅生成编码计划。"
+    ],
+    "insertions": []
+  },
+  "test_cases": {
+    "skill_note": "已读取 Skill：C:\\Users\\meigang90240\\.config\\opencode\\skills\\eb-tool-test-case\\SKILL.md，长度 20551 字符",
+    "cases": {
+      "detail_design_verification": [
+        {
+          "case_id": "TC-DD-001",
+          "verify_level": "detail_design_verification",
+          "target": "DD1",
+          "case_type": "static",
+          "steps": "检查 src/common/config_8bit.h 是否存在 VMODEL_TEST_8BIT 和 STR_VMODEL_TEST_8BIT。",
+          "expected": "两个宏均存在且命名一致。"
+        },
+        {
+          "case_id": "TC-DD-002",
+          "verify_level": "detail_design_verification",
+          "target": "DD2",
+          "case_type": "static",
+          "steps": "检查 src/middlewave/program/chips/VMODEL_TEST_8BIT.c 是否包含 io_icsp.h 和 chip_operation。",
+          "expected": "使用 旧 ICP 接口并导出 vmodel_test_8bit_ops。"
+        },
+        {
+          "case_id": "TC-DD-003",
+          "verify_level": "detail_design_verification",
+          "target": "DD3",
+          "case_type": "static",
+          "steps": "检查 src/common/cswrite_cfg_8bit.c 是否注册 OPS_VMODEL_TEST_8BIT。",
+          "expected": "extern、OPS 宏、芯片名称列表、ops 列表四处同时存在。"
+        }
+      ],
+      "architecture_verification": [
+        {
+          "case_id": "TC-ARCH-001",
+          "verify_level": "architecture_verification",
+          "target": "A1+A2+A3",
+          "case_type": "integration",
+          "steps": "检查编译宏、芯片实现、注册表三层是否形成完整链路。",
+          "expected": "STR_VMODEL_TEST_8BIT 与 OPS_VMODEL_TEST_8BIT 均进入注册表。"
+        }
+      ],
+      "requirement_acceptance": [
+        {
+          "case_id": "TC-REQ-001",
+          "verify_level": "requirement_acceptance",
+          "target": "R1+R2+R3",
+          "case_type": "acceptance",
+          "steps": "基于需求清单回溯验证 旧 ICP 新芯片支持、协议选择和三层测试覆盖。",
+          "expected": "所有已确认需求均有设计、代码和测试证据。"
+        }
+      ]
+    }
+  },
+  "test_execution": {
+    "execution_mode": "dry_run",
+    "test_runner_status": "dry_run_completed",
+    "verification_results_by_level": {
+      "detail_design_verification": [
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD1",
+          "result": "fail",
+          "evidence": "src/common/config_8bit.h 未包含 VMODEL_TEST_8BIT",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD1",
+          "result": "fail",
+          "evidence": "src/common/config_8bit.h 未包含 STR_VMODEL_TEST_8BIT",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD2",
+          "result": "fail",
+          "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD2",
+          "result": "fail",
+          "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD3",
+          "result": "fail",
+          "evidence": "src/common/cswrite_cfg_8bit.c 未包含 OPS_VMODEL_TEST_8BIT",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD3",
+          "result": "fail",
+          "evidence": "src/common/cswrite_cfg_8bit.c 未包含 STR_VMODEL_TEST_8BIT",
+          "defect_or_next_action": "检查编码阶段输出"
+        }
+      ],
+      "architecture_verification": [
+        {
+          "verify_level": "architecture_verification",
+          "target": "A1+A2+A3",
+          "result": "fail",
+          "evidence": "至少一个详细设计检查失败",
+          "defect_or_next_action": "回到详细设计/编码阶段修正"
+        }
+      ],
+      "requirement_acceptance": [
+        {
+          "verify_level": "requirement_acceptance",
+          "target": "R1",
+          "result": "manual_required",
+          "evidence": "demo 静态检查证明软件链路完整；真实烧录需后续接入专用测试环境。",
+          "defect_or_next_action": "真实环境接入后补充 real_tool 结果"
+        },
+        {
+          "verify_level": "requirement_acceptance",
+          "target": "R2",
+          "result": "fail",
+          "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+          "defect_or_next_action": "检查协议头文件和回调实现"
+        },
+        {
+          "verify_level": "requirement_acceptance",
+          "target": "R3",
+          "result": "pass",
+          "evidence": "测试用例按 detail_design_verification / architecture_verification / requirement_acceptance 三层生成。",
+          "defect_or_next_action": ""
+        }
+      ]
+    },
+    "complete_enough_for_demo": false
+  },
+  "critic_report": {
+    "status": "fail",
+    "issue_count": 9,
+    "issues": [
+      {
+        "issue_id": "CRIT-TEST-001",
+        "severity": "high",
+        "category": "test_failure",
+        "evidence": "src/common/config_8bit.h 未包含 VMODEL_TEST_8BIT",
+        "repair_target": "coding",
+        "test_level": "detail_design_verification",
+        "test_target": "DD1"
+      },
+      {
+        "issue_id": "CRIT-TEST-002",
+        "severity": "high",
+        "category": "test_failure",
+        "evidence": "src/common/config_8bit.h 未包含 STR_VMODEL_TEST_8BIT",
+        "repair_target": "coding",
+        "test_level": "detail_design_verification",
+        "test_target": "DD1"
+      },
+      {
+        "issue_id": "CRIT-TEST-003",
+        "severity": "high",
+        "category": "test_failure",
+        "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+        "repair_target": "coding",
+        "test_level": "detail_design_verification",
+        "test_target": "DD2"
+      },
+      {
+        "issue_id": "CRIT-TEST-004",
+        "severity": "high",
+        "category": "test_failure",
+        "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+        "repair_target": "coding",
+        "test_level": "detail_design_verification",
+        "test_target": "DD2"
+      },
+      {
+        "issue_id": "CRIT-TEST-005",
+        "severity": "high",
+        "category": "test_failure",
+        "evidence": "src/common/cswrite_cfg_8bit.c 未包含 OPS_VMODEL_TEST_8BIT",
+        "repair_target": "coding",
+        "test_level": "detail_design_verification",
+        "test_target": "DD3"
+      },
+      {
+        "issue_id": "CRIT-TEST-006",
+        "severity": "high",
+        "category": "test_failure",
+        "evidence": "src/common/cswrite_cfg_8bit.c 未包含 STR_VMODEL_TEST_8BIT",
+        "repair_target": "coding",
+        "test_level": "detail_design_verification",
+        "test_target": "DD3"
+      },
+      {
+        "issue_id": "CRIT-TEST-007",
+        "severity": "high",
+        "category": "test_failure",
+        "evidence": "至少一个详细设计检查失败",
+        "repair_target": "coding",
+        "test_level": "architecture_verification",
+        "test_target": "A1+A2+A3"
+      },
+      {
+        "issue_id": "CRIT-TEST-008",
+        "severity": "high",
+        "category": "test_failure",
+        "evidence": "demo 静态检查证明软件链路完整；真实烧录需后续接入专用测试环境。",
+        "repair_target": "coding",
+        "test_level": "requirement_acceptance",
+        "test_target": "R1"
+      },
+      {
+        "issue_id": "CRIT-TEST-009",
+        "severity": "high",
+        "category": "test_failure",
+        "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+        "repair_target": "coding",
+        "test_level": "requirement_acceptance",
+        "test_target": "R2"
+      }
+    ],
+    "can_repair": false,
+    "recommended_repair_target": "",
+    "repair_attempts": 0,
+    "max_repair_attempts": 0
+  },
+  "repair_history": [],
+  "repair_attempts": 0,
+  "max_repair_attempts": 0,
+  "inject_coding_defect": false,
+  "traceability_matrix": {
+    "complete": false,
+    "rows": [
+      {
+        "requirement_id": "R1",
+        "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+        "architecture_ids": "A1, A2, A3",
+        "detail_design_ids": "DD1, DD2, DD3",
+        "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+        "test_cases": "TC-ARCH-001, TC-REQ-001",
+        "execution_result": "manual_required",
+        "trace_status": "gap"
+      },
+      {
+        "requirement_id": "R2",
+        "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+        "architecture_ids": "A2",
+        "detail_design_ids": "DD2",
+        "code_files": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+        "test_cases": "TC-DD-002, TC-REQ-001",
+        "execution_result": "fail",
+        "trace_status": "gap"
+      },
+      {
+        "requirement_id": "R3",
+        "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+        "architecture_ids": "A3",
+        "detail_design_ids": "DD3",
+        "code_files": "src/common/cswrite_cfg_8bit.c",
+        "test_cases": "TC-DD-003, TC-REQ-001",
+        "execution_result": "pass",
+        "trace_status": "pass"
+      }
+    ],
+    "gaps": [
+      {
+        "requirement_id": "R1",
+        "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+        "architecture_ids": "A1, A2, A3",
+        "detail_design_ids": "DD1, DD2, DD3",
+        "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+        "test_cases": "TC-ARCH-001, TC-REQ-001",
+        "execution_result": "manual_required",
+        "trace_status": "gap"
+      },
+      {
+        "requirement_id": "R2",
+        "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+        "architecture_ids": "A2",
+        "detail_design_ids": "DD2",
+        "code_files": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+        "test_cases": "TC-DD-002, TC-REQ-001",
+        "execution_result": "fail",
+        "trace_status": "gap"
+      }
+    ]
+  },
+  "observability": {
+    "node_runs": [
+      {
+        "node": "init_run",
+        "stage": "init",
+        "elapsed_ms": 11.84,
+        "artifact_count": 0,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "task_analysis",
+        "stage": "task_analysis",
+        "elapsed_ms": 1.31,
+        "artifact_count": 1,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "planner",
+        "stage": "planner",
+        "elapsed_ms": 0.89,
+        "artifact_count": 2,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "retrieval",
+        "stage": "retrieval",
+        "elapsed_ms": 6.2,
+        "artifact_count": 4,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "requirement_review",
+        "stage": "requirement_review",
+        "elapsed_ms": 0.87,
+        "artifact_count": 5,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "requirement_gate",
+        "stage": "requirement_review",
+        "elapsed_ms": 0.0,
+        "artifact_count": 5,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "architecture_review",
+        "stage": "architecture_review",
+        "elapsed_ms": 0.86,
+        "artifact_count": 6,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "architecture_gate",
+        "stage": "architecture_review",
+        "elapsed_ms": 0.0,
+        "artifact_count": 6,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "detailed_design",
+        "stage": "detailed_design",
+        "elapsed_ms": 0.92,
+        "artifact_count": 7,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "coding",
+        "stage": "coding",
+        "elapsed_ms": 1.14,
+        "artifact_count": 8,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "test_design",
+        "stage": "test_design",
+        "elapsed_ms": 1.93,
+        "artifact_count": 9,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "test_execution",
+        "stage": "test_execution",
+        "elapsed_ms": 3.26,
+        "artifact_count": 10,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "critic",
+        "stage": "critic",
+        "elapsed_ms": 1.51,
+        "artifact_count": 11,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "traceability_matrix",
+        "stage": "traceability_matrix",
+        "elapsed_ms": 1.31,
+        "artifact_count": 12,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "observability",
+        "stage": "observability",
+        "elapsed_ms": 2.24,
+        "artifact_count": 13,
+        "llm_call_count": 0,
+        "error_count": 0
+      },
+      {
+        "node": "closed",
+        "stage": "closed",
+        "elapsed_ms": 4.61,
+        "artifact_count": 14,
+        "llm_call_count": 0,
+        "error_count": 0
+      }
+    ],
+    "report": {
+      "run_id": "20260629_172913_261",
+      "task": "只做设计不执行编码的旧 ICP 芯片任务",
+      "total_elapsed_ms_before_report": 32.04,
+      "node_count_before_report": 14,
+      "artifact_count": 12,
+      "llm": {
+        "mode": "template",
+        "calls": 0,
+        "ok": 0,
+        "failed": 0
+      },
+      "retrieval": {
+        "diagnostics": [
+          "demo 模式：使用 examples/fake_docs 与示例仓库检索。"
+        ],
+        "doc_hit_type": "list",
+        "code_hit_type": "list",
+        "memory_hits": 6
+      },
+      "context": {
+        "selected_count": 13,
+        "coverage": {
+          "required_keywords": [
+            "VMODEL_TEST_8BIT",
+            "STR_VMODEL_TEST_8BIT",
+            "OPS_VMODEL_TEST_8BIT",
+            "src/common/config_8bit.h",
+            "src/common/cswrite_cfg_8bit.c",
+            "io_icsp",
+            "chip_operation",
+            "旧 ICP"
+          ],
+          "hit_keywords": [
+            "VMODEL_TEST_8BIT",
+            "STR_VMODEL_TEST_8BIT",
+            "OPS_VMODEL_TEST_8BIT",
+            "src/common/config_8bit.h",
+            "src/common/cswrite_cfg_8bit.c",
+            "io_icsp",
+            "chip_operation",
+            "旧 ICP"
+          ],
+          "missed_keywords": [],
+          "coverage_ratio": 1.0
+        },
+        "conflicts": []
+      },
+      "traceability": {
+        "complete": false,
+        "gap_count": 2
+      },
+      "memory_counts_before_close": {
+        "episodic": 2,
+        "procedural": 2,
+        "semantic": 2
+      },
+      "errors": []
+    }
+  },
+  "errors": [],
+  "final_key_path": {
+    "task": "只做设计不执行编码的旧 ICP 芯片任务",
+    "status": "failed",
+    "chip_spec": {
+      "chip_macro": "VMODEL_TEST_8BIT",
+      "chip_string_macro": "STR_VMODEL_TEST_8BIT",
+      "chip_value": "0x12",
+      "bit_width": 8,
+      "protocol": "old_icp",
+      "protocol_label": "旧 ICP",
+      "symbol_prefix": "vmodel_test_8bit",
+      "ops_symbol": "vmodel_test_8bit_ops",
+      "ops_macro": "OPS_VMODEL_TEST_8BIT",
+      "config_file": "src/common/config_8bit.h",
+      "registry_file": "src/common/cswrite_cfg_8bit.c",
+      "chip_file": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+      "reference_chip": "CSU32PX10",
+      "scope_note": "当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。"
+    },
+    "managed_context_summary": {
+      "selected_count": 13,
+      "coverage": {
+        "required_keywords": [
+          "VMODEL_TEST_8BIT",
+          "STR_VMODEL_TEST_8BIT",
+          "OPS_VMODEL_TEST_8BIT",
+          "src/common/config_8bit.h",
+          "src/common/cswrite_cfg_8bit.c",
+          "io_icsp",
+          "chip_operation",
+          "旧 ICP"
+        ],
+        "hit_keywords": [
+          "VMODEL_TEST_8BIT",
+          "STR_VMODEL_TEST_8BIT",
+          "OPS_VMODEL_TEST_8BIT",
+          "src/common/config_8bit.h",
+          "src/common/cswrite_cfg_8bit.c",
+          "io_icsp",
+          "chip_operation",
+          "旧 ICP"
+        ],
+        "missed_keywords": [],
+        "coverage_ratio": 1.0
+      },
+      "conflicts": []
+    },
+    "retrieved_context": {
+      "taskpaths": [],
+      "docs": [
+        {
+          "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\examples\\fake_docs\\0003_需求说明书.md",
+          "text": "# 0003 需求说明书\n\n新增 8 位旧 ICP 芯片时，需要复用现有旧 ICP 通信协议，不能误接 SPI 新协议。\n\n验收要求：\n\n- 能在软件侧识别芯片名称。\n- 能通过芯片操作表找到读 ID、擦除、编程三个回调。\n- 测试用例需要覆盖实现细节、架构链路和用户需求验收。\n\n"
+        },
+        {
+          "source": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\examples\\fake_docs\\0011_8位芯片烧录规范.md",
+          "text": "# 0011 8位芯片烧录规范\n\n旧 ICP 芯片需要通过 `io_icsp.h` 暴露的接口完成读 ID、擦除和编程。\n\n新增芯片时需要保持以下软件链路：\n\n1. 在 `config_8bit.h` 添加芯片编译宏和芯片名称 STR 宏。\n2. 在 `src/middlewave/program/chips/<CHIP>.c` 实现 `chip_operation` 回调。\n3. 在 `cswrite_cfg_8bit.c` 注册 extern、OPS 宏、芯片名称列表和 ops 列表。\n4. 芯片名称列表和 ops 列表必须同步维护，避免主机枚举和实际烧录操作错位。\n\n"
+        }
+      ],
+      "code": [
+        {
+          "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\chip_operation.h",
+          "snippet": "#ifndef CHIP_OPERATION_H\n#define CHIP_OPERATION_H\n\nstruct chip_operation {\n    int (*read_id)(void);\n    int (*erase)(void);\n    int (*program)(void);\n};\n\n#endif\n\n"
+        },
+        {
+          "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\config_8bit.h",
+          "snippet": "#ifndef CONFIG_8BIT_H\n#define CONFIG_8BIT_H\n\n#define CSU32PX10 0x10\n#define CSU38MX10 0x11\n/* CHIP_DEFINE_END */\n\n#define STR_CSU32PX10 \"CSU32PX10\"\n#define STR_CSU38MX10 \"CSU38MX10\"\n/* CHIP_STR_END */\n\n#endif\n\n"
+        },
+        {
+          "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\cswrite_cfg_8bit.c",
+          "snippet": "#include \"config_8bit.h\"\n#include \"chip_operation.h\"\n\nextern const struct chip_operation csu32px10_ops;\nextern const struct chip_operation csu38mx10_ops;\n/* EXTERN_END */\n\n#define OPS_CSU32PX10 (&csu32px10_ops)\n#define OPS_CSU38MX10 (&csu38mx10_ops)\n/* OPS_DEFINE_END */\n\nconst char *cswrite_chip_list[] = {\n    STR_CSU32PX10,\n    STR_CSU38MX10,\n/* CHIP_LIST_END */\n};\n\nconst struct chip_operation *cswrite_chip_ops_list[] = {\n    OPS_CSU32PX10,\n    OPS_CSU38MX10,\n/* OPS_LIST_END */\n};\n\n"
+        },
+        {
+          "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\middlewave\\program\\chips\\CSU32PX10.c",
+          "snippet": "#include \"io_icsp.h\"\n#include \"chip_operation.h\"\n\nstatic int csu32px10_read_id(void) { return io_icsp_read_id(); }\nstatic int csu32px10_erase(void) { return io_icsp_chip_erase(); }\nstatic int csu32px10_program(void) { return io_icsp_program(); }\n\nconst struct chip_operation csu32px10_ops = {\n    .read_id = csu32px10_read_id,\n    .erase = csu32px10_erase,\n    .program = csu32px10_program,\n};\n\n"
+        },
+        {
+          "file": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\middlewave\\program\\chips\\io_icsp.h",
+          "snippet": "#ifndef IO_ICSP_H\n#define IO_ICSP_H\n\nint io_icsp_read_id(void);\nint io_icsp_chip_erase(void);\nint io_icsp_program(void);\n\n#endif\n\n"
+        }
+      ],
+      "diagnostics": [
+        "demo 模式：使用 examples/fake_docs 与示例仓库检索。"
+      ],
+      "memories": [
+        {
+          "summary": "一次完整 V 模型研发闭环成功执行。",
+          "chip_spec": {
+            "chip_macro": "VMODEL_TEST_8BIT",
+            "chip_string_macro": "STR_VMODEL_TEST_8BIT",
+            "chip_value": "0x12",
+            "bit_width": 8,
+            "protocol": "old_icp",
+            "protocol_label": "旧 ICP",
+            "symbol_prefix": "vmodel_test_8bit",
+            "ops_symbol": "vmodel_test_8bit_ops",
+            "ops_macro": "OPS_VMODEL_TEST_8BIT",
+            "config_file": "src/common/config_8bit.h",
+            "registry_file": "src/common/cswrite_cfg_8bit.c",
+            "chip_file": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+            "reference_chip": "CSU32PX10",
+            "scope_note": "当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。"
+          },
+          "artifacts": {
+            "task_analysis": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\00_task_analysis.md",
+            "planner": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\00_planner.md",
+            "context_pack": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\00_context_pack.md",
+            "managed_context": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\00_managed_context.md",
+            "requirement_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\01_requirement_review.md",
+            "architecture_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\02_architecture_review.md",
+            "detailed_design": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\03_detailed_design.md",
+            "coding_record": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\04_coding_record.md",
+            "test_cases": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\05_test_cases.md",
+            "test_execution": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\06_test_execution.md",
+            "critic_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\10_critic_report.md",
+            "traceability_matrix": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\08_traceability_matrix.md",
+            "observability_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\09_observability_report.md",
+            "key_success_path": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_557_新增一个测试用_8_位旧_ICP_芯片_VMODEL_TEST_8BIT_验证完整研\\07_key_success_path.md"
+          },
+          "verification": {
+            "execution_mode": "dry_run",
+            "test_runner_status": "dry_run_completed",
+            "verification_results_by_level": {
+              "detail_design_verification": [
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD1",
+                  "result": "pass",
+                  "evidence": "src/common/config_8bit.h 包含 VMODEL_TEST_8BIT",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD1",
+                  "result": "pass",
+                  "evidence": "src/common/config_8bit.h 包含 STR_VMODEL_TEST_8BIT",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD2",
+                  "result": "pass",
+                  "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 包含 io_icsp.h",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD2",
+                  "result": "pass",
+                  "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 包含 vmodel_test_8bit_ops",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD3",
+                  "result": "pass",
+                  "evidence": "src/common/cswrite_cfg_8bit.c 包含 OPS_VMODEL_TEST_8BIT",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD3",
+                  "result": "pass",
+                  "evidence": "src/common/cswrite_cfg_8bit.c 包含 STR_VMODEL_TEST_8BIT",
+                  "defect_or_next_action": ""
+                }
+              ],
+              "architecture_verification": [
+                {
+                  "verify_level": "architecture_verification",
+                  "target": "A1+A2+A3",
+                  "result": "pass",
+                  "evidence": "VMODEL_TEST_8BIT 宏定义、芯片实现、注册表三层均存在",
+                  "defect_or_next_action": ""
+                }
+              ],
+              "requirement_acceptance": [
+                {
+                  "verify_level": "requirement_acceptance",
+                  "target": "R1",
+                  "result": "pass",
+                  "evidence": "demo 静态检查证明软件链路完整；真实烧录需后续接入专用测试环境。",
+                  "defect_or_next_action": "真实环境接入后补充 real_tool 结果"
+                },
+                {
+                  "verify_level": "requirement_acceptance",
+                  "target": "R2",
+                  "result": "pass",
+                  "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 包含 io_icsp",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "requirement_acceptance",
+                  "target": "R3",
+                  "result": "pass",
+                  "evidence": "测试用例按 detail_design_verification / architecture_verification / requirement_acceptance 三层生成。",
+                  "defect_or_next_action": ""
+                }
+              ]
+            },
+            "complete_enough_for_demo": true
+          },
+          "_memory_type": "episodic",
+          "_memory_key": "run:20260629_172912_557",
+          "_memory_run_id": "20260629_172912_557",
+          "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_TEST_8BIT，验证完整研发流程",
+          "_memory_source_stage": "closed",
+          "_memory_confidence": 0.85,
+          "_memory_tags": [
+            "VMODEL_TEST_8BIT",
+            "旧 ICP",
+            "8bit",
+            "vmodel",
+            "cswrite"
+          ],
+          "_memory_score": 6.85,
+          "_created_at": "2026-06-29T17:29:12"
+        },
+        {
+          "procedure": "相似新增 旧 ICP 芯片任务可复用三步注册模式：src/common/config_8bit.h -> src/middlewave/program/chips/VMODEL_TEST_8BIT.c -> src/common/cswrite_cfg_8bit.c。",
+          "traceability_matrix": {
+            "complete": true,
+            "rows": [
+              {
+                "requirement_id": "R1",
+                "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+                "architecture_ids": "A1, A2, A3",
+                "detail_design_ids": "DD1, DD2, DD3",
+                "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+                "test_cases": "TC-ARCH-001, TC-REQ-001",
+                "execution_result": "pass",
+                "trace_status": "pass"
+              },
+              {
+                "requirement_id": "R2",
+                "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+                "architecture_ids": "A2",
+                "detail_design_ids": "DD2",
+                "code_files": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+                "test_cases": "TC-DD-002, TC-REQ-001",
+                "execution_result": "pass",
+                "trace_status": "pass"
+              },
+              {
+                "requirement_id": "R3",
+                "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+                "architecture_ids": "A3",
+                "detail_design_ids": "DD3",
+                "code_files": "src/common/cswrite_cfg_8bit.c",
+                "test_cases": "TC-DD-003, TC-REQ-001",
+                "execution_result": "pass",
+                "trace_status": "pass"
+              }
+            ],
+            "gaps": []
+          },
+          "pitfalls": [
+            "不要只完成编码验证就保存成功路径。",
+            "名称列表和 ops 列表必须同步维护，否则 UI 展示和操作调度会错位。",
+            "真实测试环境未接入时必须标记 dry_run/manual/hardware-required。"
+          ],
+          "_memory_type": "procedural",
+          "_memory_key": "procedure:old_icp:8",
+          "_memory_run_id": "20260629_172912_557",
+          "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_TEST_8BIT，验证完整研发流程",
+          "_memory_source_stage": "closed",
+          "_memory_confidence": 0.9,
+          "_memory_tags": [
+            "VMODEL_TEST_8BIT",
+            "旧 ICP",
+            "8bit",
+            "vmodel",
+            "cswrite",
+            "success_path"
+          ],
+          "_memory_score": 5.9,
+          "_created_at": "2026-06-29T17:29:12"
+        },
+        {
+          "summary": "一次完整 V 模型研发闭环成功执行。",
+          "chip_spec": {
+            "chip_macro": "VMODEL_REPAIR_8BIT",
+            "chip_string_macro": "STR_VMODEL_REPAIR_8BIT",
+            "chip_value": "0x12",
+            "bit_width": 8,
+            "protocol": "old_icp",
+            "protocol_label": "旧 ICP",
+            "symbol_prefix": "vmodel_repair_8bit",
+            "ops_symbol": "vmodel_repair_8bit_ops",
+            "ops_macro": "OPS_VMODEL_REPAIR_8BIT",
+            "config_file": "src/common/config_8bit.h",
+            "registry_file": "src/common/cswrite_cfg_8bit.c",
+            "chip_file": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+            "reference_chip": "CSU32PX10",
+            "scope_note": "当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。"
+          },
+          "artifacts": {
+            "task_analysis": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\00_task_analysis.md",
+            "planner": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\00_planner.md",
+            "context_pack": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\00_context_pack.md",
+            "managed_context": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\00_managed_context.md",
+            "requirement_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\01_requirement_review.md",
+            "architecture_review": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\02_architecture_review.md",
+            "detailed_design": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\03_detailed_design.md",
+            "coding_record": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\04_coding_record.md",
+            "test_cases": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\05_test_cases.md",
+            "test_execution": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\06_test_execution.md",
+            "critic_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\10_critic_report.md",
+            "reflection_attempt_1": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\11_reflection_attempt_1.md",
+            "traceability_matrix": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\08_traceability_matrix.md",
+            "observability_report": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\09_observability_report.md",
+            "key_success_path": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\07_key_success_path.md"
+          },
+          "verification": {
+            "execution_mode": "dry_run",
+            "test_runner_status": "dry_run_completed",
+            "verification_results_by_level": {
+              "detail_design_verification": [
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD1",
+                  "result": "pass",
+                  "evidence": "src/common/config_8bit.h 包含 VMODEL_REPAIR_8BIT",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD1",
+                  "result": "pass",
+                  "evidence": "src/common/config_8bit.h 包含 STR_VMODEL_REPAIR_8BIT",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD2",
+                  "result": "pass",
+                  "evidence": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c 包含 io_icsp.h",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD2",
+                  "result": "pass",
+                  "evidence": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c 包含 vmodel_repair_8bit_ops",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD3",
+                  "result": "pass",
+                  "evidence": "src/common/cswrite_cfg_8bit.c 包含 OPS_VMODEL_REPAIR_8BIT",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "detail_design_verification",
+                  "target": "DD3",
+                  "result": "pass",
+                  "evidence": "src/common/cswrite_cfg_8bit.c 包含 STR_VMODEL_REPAIR_8BIT",
+                  "defect_or_next_action": ""
+                }
+              ],
+              "architecture_verification": [
+                {
+                  "verify_level": "architecture_verification",
+                  "target": "A1+A2+A3",
+                  "result": "pass",
+                  "evidence": "VMODEL_REPAIR_8BIT 宏定义、芯片实现、注册表三层均存在",
+                  "defect_or_next_action": ""
+                }
+              ],
+              "requirement_acceptance": [
+                {
+                  "verify_level": "requirement_acceptance",
+                  "target": "R1",
+                  "result": "pass",
+                  "evidence": "demo 静态检查证明软件链路完整；真实烧录需后续接入专用测试环境。",
+                  "defect_or_next_action": "真实环境接入后补充 real_tool 结果"
+                },
+                {
+                  "verify_level": "requirement_acceptance",
+                  "target": "R2",
+                  "result": "pass",
+                  "evidence": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c 包含 io_icsp",
+                  "defect_or_next_action": ""
+                },
+                {
+                  "verify_level": "requirement_acceptance",
+                  "target": "R3",
+                  "result": "pass",
+                  "evidence": "测试用例按 detail_design_verification / architecture_verification / requirement_acceptance 三层生成。",
+                  "defect_or_next_action": ""
+                }
+              ]
+            },
+            "complete_enough_for_demo": true
+          },
+          "_memory_type": "episodic",
+          "_memory_key": "run:20260629_172912_862",
+          "_memory_run_id": "20260629_172912_862",
+          "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_REPAIR_8BIT，验证自修复流程",
+          "_memory_source_stage": "closed",
+          "_memory_confidence": 0.85,
+          "_memory_tags": [
+            "VMODEL_REPAIR_8BIT",
+            "旧 ICP",
+            "8bit",
+            "vmodel",
+            "cswrite"
+          ],
+          "_memory_score": 5.85,
+          "_created_at": "2026-06-29T17:29:13"
+        },
+        {
+          "procedure": "相似新增 旧 ICP 芯片任务可复用三步注册模式：src/common/config_8bit.h -> src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c -> src/common/cswrite_cfg_8bit.c。",
+          "traceability_matrix": {
+            "complete": true,
+            "rows": [
+              {
+                "requirement_id": "R1",
+                "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_REPAIR_8BIT 的软件侧支持。",
+                "architecture_ids": "A1, A2, A3",
+                "detail_design_ids": "DD1, DD2, DD3",
+                "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+                "test_cases": "TC-ARCH-001, TC-REQ-001",
+                "execution_result": "pass",
+                "trace_status": "pass"
+              },
+              {
+                "requirement_id": "R2",
+                "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+                "architecture_ids": "A2",
+                "detail_design_ids": "DD2",
+                "code_files": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+                "test_cases": "TC-DD-002, TC-REQ-001",
+                "execution_result": "pass",
+                "trace_status": "pass"
+              },
+              {
+                "requirement_id": "R3",
+                "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+                "architecture_ids": "A3",
+                "detail_design_ids": "DD3",
+                "code_files": "src/common/cswrite_cfg_8bit.c",
+                "test_cases": "TC-DD-003, TC-REQ-001",
+                "execution_result": "pass",
+                "trace_status": "pass"
+              }
+            ],
+            "gaps": []
+          },
+          "pitfalls": [
+            "不要只完成编码验证就保存成功路径。",
+            "名称列表和 ops 列表必须同步维护，否则 UI 展示和操作调度会错位。",
+            "真实测试环境未接入时必须标记 dry_run/manual/hardware-required。"
+          ],
+          "_memory_type": "procedural",
+          "_memory_key": "procedure:old_icp:8",
+          "_memory_run_id": "20260629_172912_862",
+          "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_REPAIR_8BIT，验证自修复流程",
+          "_memory_source_stage": "closed",
+          "_memory_confidence": 0.9,
+          "_memory_tags": [
+            "VMODEL_REPAIR_8BIT",
+            "旧 ICP",
+            "8bit",
+            "vmodel",
+            "cswrite",
+            "success_path"
+          ],
+          "_memory_score": 4.9,
+          "_created_at": "2026-06-29T17:29:13"
+        },
+        {
+          "fact": "旧 ICP 新芯片接入需要同时维护宏定义、芯片实现、名称列表和 ops 列表。",
+          "evidence": [
+            {
+              "requirement_id": "R1",
+              "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+              "architecture_ids": "A1, A2, A3",
+              "detail_design_ids": "DD1, DD2, DD3",
+              "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+              "test_cases": "TC-ARCH-001, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            },
+            {
+              "requirement_id": "R2",
+              "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+              "architecture_ids": "A2",
+              "detail_design_ids": "DD2",
+              "code_files": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+              "test_cases": "TC-DD-002, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            },
+            {
+              "requirement_id": "R3",
+              "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+              "architecture_ids": "A3",
+              "detail_design_ids": "DD3",
+              "code_files": "src/common/cswrite_cfg_8bit.c",
+              "test_cases": "TC-DD-003, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            }
+          ],
+          "_memory_type": "semantic",
+          "_memory_key": "rule:old_icp:registration",
+          "_memory_run_id": "20260629_172912_557",
+          "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_TEST_8BIT，验证完整研发流程",
+          "_memory_source_stage": "closed",
+          "_memory_confidence": 0.8,
+          "_memory_tags": [
+            "VMODEL_TEST_8BIT",
+            "旧 ICP",
+            "8bit",
+            "vmodel",
+            "cswrite",
+            "domain_rule"
+          ],
+          "_memory_score": 4.8,
+          "_created_at": "2026-06-29T17:29:12"
+        },
+        {
+          "fact": "旧 ICP 新芯片接入需要同时维护宏定义、芯片实现、名称列表和 ops 列表。",
+          "evidence": [
+            {
+              "requirement_id": "R1",
+              "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_REPAIR_8BIT 的软件侧支持。",
+              "architecture_ids": "A1, A2, A3",
+              "detail_design_ids": "DD1, DD2, DD3",
+              "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+              "test_cases": "TC-ARCH-001, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            },
+            {
+              "requirement_id": "R2",
+              "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+              "architecture_ids": "A2",
+              "detail_design_ids": "DD2",
+              "code_files": "src/middlewave/program/chips/VMODEL_REPAIR_8BIT.c",
+              "test_cases": "TC-DD-002, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            },
+            {
+              "requirement_id": "R3",
+              "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+              "architecture_ids": "A3",
+              "detail_design_ids": "DD3",
+              "code_files": "src/common/cswrite_cfg_8bit.c",
+              "test_cases": "TC-DD-003, TC-REQ-001",
+              "execution_result": "pass",
+              "trace_status": "pass"
+            }
+          ],
+          "_memory_type": "semantic",
+          "_memory_key": "rule:old_icp:registration",
+          "_memory_run_id": "20260629_172912_862",
+          "_memory_task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_REPAIR_8BIT，验证自修复流程",
+          "_memory_source_stage": "closed",
+          "_memory_confidence": 0.8,
+          "_memory_tags": [
+            "VMODEL_REPAIR_8BIT",
+            "旧 ICP",
+            "8bit",
+            "vmodel",
+            "cswrite",
+            "domain_rule"
+          ],
+          "_memory_score": 3.8,
+          "_created_at": "2026-06-29T17:29:13"
+        }
+      ]
+    },
+    "approved_requirements": [
+      {
+        "req_id": "R1",
+        "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+        "source_evidence": "任务输入 + 旧 ICP 芯片参考实现 + 8 位烧录规范 + 上下文检索结果",
+        "acceptance_criteria": "src/common/config_8bit.h 中存在芯片宏与名称宏，src/middlewave/program/chips/VMODEL_TEST_8BIT.c 存在实现文件，src/common/cswrite_cfg_8bit.c 完成 ops 注册。",
+        "user_confirmation": "approved",
+        "status": "approved"
+      },
+      {
+        "req_id": "R2",
+        "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+        "source_evidence": "io_icsp 旧 ICP 接口、chip_operation 回调与参考芯片实现",
+        "acceptance_criteria": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 引用 io_icsp.h，read_id/erase/program 回调均走旧 ICP 风格接口。",
+        "user_confirmation": "approved",
+        "status": "approved"
+      },
+      {
+        "req_id": "R3",
+        "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+        "source_evidence": "当前工作流规则",
+        "acceptance_criteria": "05_test_cases.md 与 06_test_execution.md 均按三层分组。",
+        "user_confirmation": "approved",
+        "status": "approved"
+      }
+    ],
+    "approved_architecture": [
+      {
+        "arch_id": "A1",
+        "linked_requirement": "R1",
+        "layer_module": "芯片编译宏与名称层",
+        "design_decision": "在 src/common/config_8bit.h 新增 VMODEL_TEST_8BIT 和 STR_VMODEL_TEST_8BIT。",
+        "interface_dependency": "被 src/common/cswrite_cfg_8bit.c 和 UI/配置层引用。",
+        "user_confirmation": "approved",
+        "status": "approved"
+      },
+      {
+        "arch_id": "A2",
+        "linked_requirement": "R1,R2",
+        "layer_module": "芯片操作实现层",
+        "design_decision": "新增 src/middlewave/program/chips/VMODEL_TEST_8BIT.c，按 chip_operation 回调模板实现。",
+        "interface_dependency": "依赖 io_icsp.h 的 旧 ICP 通信接口。",
+        "user_confirmation": "approved",
+        "status": "approved"
+      },
+      {
+        "arch_id": "A3",
+        "linked_requirement": "R1,R3",
+        "layer_module": "注册与调度层",
+        "design_decision": "在 src/common/cswrite_cfg_8bit.c 注册 extern、OPS_VMODEL_TEST_8BIT、名称列表和 ops 列表。",
+        "interface_dependency": "名称列表与 ops 列表索引必须一致。",
+        "user_confirmation": "approved",
+        "status": "approved"
+      }
+    ],
+    "detailed_design_items": [
+      {
+        "dd_id": "DD1",
+        "linked_arch": "A1",
+        "file": "src/common/config_8bit.h",
+        "operation": "新增 #define VMODEL_TEST_8BIT 0x12，并添加 STR_VMODEL_TEST_8BIT。",
+        "symbols": "VMODEL_TEST_8BIT, STR_VMODEL_TEST_8BIT",
+        "verification_point": "宏可被 Select-String 检索到。"
+      },
+      {
+        "dd_id": "DD2",
+        "linked_arch": "A2",
+        "file": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+        "operation": "新增芯片实现，包含 io_icsp.h 和 chip_operation 回调结构体。",
+        "symbols": "vmodel_test_8bit_ops, chip_operation",
+        "verification_point": "文件存在且包含 io_icsp.h、read_id、program、erase。"
+      },
+      {
+        "dd_id": "DD3",
+        "linked_arch": "A3",
+        "file": "src/common/cswrite_cfg_8bit.c",
+        "operation": "注册 extern、OPS 宏、芯片名称列表和 ops 列表。",
+        "symbols": "OPS_VMODEL_TEST_8BIT, cswrite_chip_list, cswrite_chip_ops_list",
+        "verification_point": "名称列表和 ops 列表都包含新芯片。"
+      }
+    ],
+    "coding_record": {
+      "chip_spec": {
+        "chip_macro": "VMODEL_TEST_8BIT",
+        "chip_string_macro": "STR_VMODEL_TEST_8BIT",
+        "chip_value": "0x12",
+        "bit_width": 8,
+        "protocol": "old_icp",
+        "protocol_label": "旧 ICP",
+        "symbol_prefix": "vmodel_test_8bit",
+        "ops_symbol": "vmodel_test_8bit_ops",
+        "ops_macro": "OPS_VMODEL_TEST_8BIT",
+        "config_file": "src/common/config_8bit.h",
+        "registry_file": "src/common/cswrite_cfg_8bit.c",
+        "chip_file": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+        "reference_chip": "CSU32PX10",
+        "scope_note": "当前 demo 聚焦旧 ICP 新芯片接入；真实硬件烧录结果通过测试执行阶段标记为后续接入。"
+      },
+      "modified_files": [
+        "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\config_8bit.h",
+        "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\middlewave\\program\\chips\\VMODEL_TEST_8BIT.c",
+        "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo\\src\\common\\cswrite_cfg_8bit.c"
+      ],
+      "commands": [],
+      "notes": [
+        "当前未开启 execute_code，仅生成编码计划。"
+      ],
+      "insertions": []
+    },
+    "test_case_files": [
+      "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\05_test_cases.md"
+    ],
+    "verification_results_by_level": {
+      "detail_design_verification": [
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD1",
+          "result": "fail",
+          "evidence": "src/common/config_8bit.h 未包含 VMODEL_TEST_8BIT",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD1",
+          "result": "fail",
+          "evidence": "src/common/config_8bit.h 未包含 STR_VMODEL_TEST_8BIT",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD2",
+          "result": "fail",
+          "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD2",
+          "result": "fail",
+          "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD3",
+          "result": "fail",
+          "evidence": "src/common/cswrite_cfg_8bit.c 未包含 OPS_VMODEL_TEST_8BIT",
+          "defect_or_next_action": "检查编码阶段输出"
+        },
+        {
+          "verify_level": "detail_design_verification",
+          "target": "DD3",
+          "result": "fail",
+          "evidence": "src/common/cswrite_cfg_8bit.c 未包含 STR_VMODEL_TEST_8BIT",
+          "defect_or_next_action": "检查编码阶段输出"
+        }
+      ],
+      "architecture_verification": [
+        {
+          "verify_level": "architecture_verification",
+          "target": "A1+A2+A3",
+          "result": "fail",
+          "evidence": "至少一个详细设计检查失败",
+          "defect_or_next_action": "回到详细设计/编码阶段修正"
+        }
+      ],
+      "requirement_acceptance": [
+        {
+          "verify_level": "requirement_acceptance",
+          "target": "R1",
+          "result": "manual_required",
+          "evidence": "demo 静态检查证明软件链路完整；真实烧录需后续接入专用测试环境。",
+          "defect_or_next_action": "真实环境接入后补充 real_tool 结果"
+        },
+        {
+          "verify_level": "requirement_acceptance",
+          "target": "R2",
+          "result": "fail",
+          "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+          "defect_or_next_action": "检查协议头文件和回调实现"
+        },
+        {
+          "verify_level": "requirement_acceptance",
+          "target": "R3",
+          "result": "pass",
+          "evidence": "测试用例按 detail_design_verification / architecture_verification / requirement_acceptance 三层生成。",
+          "defect_or_next_action": ""
+        }
+      ]
+    },
+    "traceability_matrix": {
+      "complete": false,
+      "rows": [
+        {
+          "requirement_id": "R1",
+          "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+          "architecture_ids": "A1, A2, A3",
+          "detail_design_ids": "DD1, DD2, DD3",
+          "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+          "test_cases": "TC-ARCH-001, TC-REQ-001",
+          "execution_result": "manual_required",
+          "trace_status": "gap"
+        },
+        {
+          "requirement_id": "R2",
+          "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+          "architecture_ids": "A2",
+          "detail_design_ids": "DD2",
+          "code_files": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+          "test_cases": "TC-DD-002, TC-REQ-001",
+          "execution_result": "fail",
+          "trace_status": "gap"
+        },
+        {
+          "requirement_id": "R3",
+          "requirement": "测试必须覆盖编码实现、架构设计和需求验收三层。",
+          "architecture_ids": "A3",
+          "detail_design_ids": "DD3",
+          "code_files": "src/common/cswrite_cfg_8bit.c",
+          "test_cases": "TC-DD-003, TC-REQ-001",
+          "execution_result": "pass",
+          "trace_status": "pass"
+        }
+      ],
+      "gaps": [
+        {
+          "requirement_id": "R1",
+          "requirement": "新增 8 位 旧 ICP 芯片 VMODEL_TEST_8BIT 的软件侧支持。",
+          "architecture_ids": "A1, A2, A3",
+          "detail_design_ids": "DD1, DD2, DD3",
+          "code_files": "src/common/config_8bit.h<br>src/common/cswrite_cfg_8bit.c<br>src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+          "test_cases": "TC-ARCH-001, TC-REQ-001",
+          "execution_result": "manual_required",
+          "trace_status": "gap"
+        },
+        {
+          "requirement_id": "R2",
+          "requirement": "实现时必须复用 旧 ICP 通信协议，不误用其他新协议。",
+          "architecture_ids": "A2",
+          "detail_design_ids": "DD2",
+          "code_files": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c",
+          "test_cases": "TC-DD-002, TC-REQ-001",
+          "execution_result": "fail",
+          "trace_status": "gap"
+        }
+      ]
+    },
+    "critic_report": {
+      "status": "fail",
+      "issue_count": 9,
+      "issues": [
+        {
+          "issue_id": "CRIT-TEST-001",
+          "severity": "high",
+          "category": "test_failure",
+          "evidence": "src/common/config_8bit.h 未包含 VMODEL_TEST_8BIT",
+          "repair_target": "coding",
+          "test_level": "detail_design_verification",
+          "test_target": "DD1"
+        },
+        {
+          "issue_id": "CRIT-TEST-002",
+          "severity": "high",
+          "category": "test_failure",
+          "evidence": "src/common/config_8bit.h 未包含 STR_VMODEL_TEST_8BIT",
+          "repair_target": "coding",
+          "test_level": "detail_design_verification",
+          "test_target": "DD1"
+        },
+        {
+          "issue_id": "CRIT-TEST-003",
+          "severity": "high",
+          "category": "test_failure",
+          "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+          "repair_target": "coding",
+          "test_level": "detail_design_verification",
+          "test_target": "DD2"
+        },
+        {
+          "issue_id": "CRIT-TEST-004",
+          "severity": "high",
+          "category": "test_failure",
+          "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+          "repair_target": "coding",
+          "test_level": "detail_design_verification",
+          "test_target": "DD2"
+        },
+        {
+          "issue_id": "CRIT-TEST-005",
+          "severity": "high",
+          "category": "test_failure",
+          "evidence": "src/common/cswrite_cfg_8bit.c 未包含 OPS_VMODEL_TEST_8BIT",
+          "repair_target": "coding",
+          "test_level": "detail_design_verification",
+          "test_target": "DD3"
+        },
+        {
+          "issue_id": "CRIT-TEST-006",
+          "severity": "high",
+          "category": "test_failure",
+          "evidence": "src/common/cswrite_cfg_8bit.c 未包含 STR_VMODEL_TEST_8BIT",
+          "repair_target": "coding",
+          "test_level": "detail_design_verification",
+          "test_target": "DD3"
+        },
+        {
+          "issue_id": "CRIT-TEST-007",
+          "severity": "high",
+          "category": "test_failure",
+          "evidence": "至少一个详细设计检查失败",
+          "repair_target": "coding",
+          "test_level": "architecture_verification",
+          "test_target": "A1+A2+A3"
+        },
+        {
+          "issue_id": "CRIT-TEST-008",
+          "severity": "high",
+          "category": "test_failure",
+          "evidence": "demo 静态检查证明软件链路完整；真实烧录需后续接入专用测试环境。",
+          "repair_target": "coding",
+          "test_level": "requirement_acceptance",
+          "test_target": "R1"
+        },
+        {
+          "issue_id": "CRIT-TEST-009",
+          "severity": "high",
+          "category": "test_failure",
+          "evidence": "src/middlewave/program/chips/VMODEL_TEST_8BIT.c 不存在",
+          "repair_target": "coding",
+          "test_level": "requirement_acceptance",
+          "test_target": "R2"
+        }
+      ],
+      "can_repair": false,
+      "recommended_repair_target": "",
+      "repair_attempts": 0,
+      "max_repair_attempts": 0
+    },
+    "reflection_history": [],
+    "observability_report": {
+      "run_id": "20260629_172913_261",
+      "task": "只做设计不执行编码的旧 ICP 芯片任务",
+      "total_elapsed_ms_before_report": 32.04,
+      "node_count_before_report": 14,
+      "artifact_count": 12,
+      "llm": {
+        "mode": "template",
+        "calls": 0,
+        "ok": 0,
+        "failed": 0
+      },
+      "retrieval": {
+        "diagnostics": [
+          "demo 模式：使用 examples/fake_docs 与示例仓库检索。"
+        ],
+        "doc_hit_type": "list",
+        "code_hit_type": "list",
+        "memory_hits": 6
+      },
+      "context": {
+        "selected_count": 13,
+        "coverage": {
+          "required_keywords": [
+            "VMODEL_TEST_8BIT",
+            "STR_VMODEL_TEST_8BIT",
+            "OPS_VMODEL_TEST_8BIT",
+            "src/common/config_8bit.h",
+            "src/common/cswrite_cfg_8bit.c",
+            "io_icsp",
+            "chip_operation",
+            "旧 ICP"
+          ],
+          "hit_keywords": [
+            "VMODEL_TEST_8BIT",
+            "STR_VMODEL_TEST_8BIT",
+            "OPS_VMODEL_TEST_8BIT",
+            "src/common/config_8bit.h",
+            "src/common/cswrite_cfg_8bit.c",
+            "io_icsp",
+            "chip_operation",
+            "旧 ICP"
+          ],
+          "missed_keywords": [],
+          "coverage_ratio": 1.0
+        },
+        "conflicts": []
+      },
+      "traceability": {
+        "complete": false,
+        "gap_count": 2
+      },
+      "memory_counts_before_close": {
+        "episodic": 2,
+        "procedural": 2,
+        "semantic": 2
+      },
+      "errors": []
+    },
+    "pitfalls": [
+      "不要只完成编码验证就保存成功路径。",
+      "名称列表和 ops 列表必须同步维护，否则 UI 展示和操作调度会错位。",
+      "真实测试环境未接入时必须标记 dry_run/manual/hardware-required。"
+    ],
+    "agent_engineering_evidence": {
+      "langgraph_nodes": [
+        "task_analysis",
+        "planner",
+        "retrieval",
+        "requirement_review",
+        "architecture_review",
+        "detailed_design",
+        "coding",
+        "test_design",
+        "test_execution",
+        "critic",
+        "reflection",
+        "traceability_matrix",
+        "observability",
+        "closed"
+      ],
+      "llm_call_count": 0,
+      "human_gates": [
+        "requirement",
+        "architecture"
+      ],
+      "memory_policy": "仅 closed 且 status=success 时写入 success_paths，避免失败路径污染记忆库。"
+    },
+    "next_reuse_hint": "相似新增 旧 ICP 芯片任务可复用三步注册模式：src/common/config_8bit.h -> src/middlewave/program/chips/VMODEL_TEST_8BIT.c -> src/common/cswrite_cfg_8bit.c。"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "task": "只做设计不执行编码的旧 ICP 芯片任务",
+  "mode": "demo",
+  "llm_mode": "template",
+  "auto_approve": true,
+  "execute_code": false,
+  "run_id": "20260629_172913_261",
+  "task_slug": "只做设计不执行编码的旧_ICP_芯片任务",
+  "task_dir": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务",
+  "stage": "init",
+  "save_real_taskpath": false,
+  "inject_coding_defect": false,
+  "repair_attempts": 0,
+  "max_repair_attempts": 0,
+  "repair_history": [],
+  "approved_gates": [],
+  "artifacts": {},
+  "messages": [],
+  "errors": [],
+  "repo_dir": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172913_261_只做设计不执行编码的旧_ICP_芯片任务\\repo"
+}

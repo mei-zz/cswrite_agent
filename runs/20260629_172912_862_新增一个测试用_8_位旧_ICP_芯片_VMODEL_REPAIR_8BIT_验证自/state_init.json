@@ -1,0 +1,21 @@
+{
+  "task": "新增一个测试用 8 位旧 ICP 芯片 VMODEL_REPAIR_8BIT，验证自修复流程",
+  "mode": "demo",
+  "llm_mode": "template",
+  "auto_approve": true,
+  "execute_code": true,
+  "max_repair_attempts": 1,
+  "inject_coding_defect": true,
+  "run_id": "20260629_172912_862",
+  "task_slug": "新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自",
+  "task_dir": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自",
+  "stage": "init",
+  "save_real_taskpath": false,
+  "repair_attempts": 0,
+  "repair_history": [],
+  "approved_gates": [],
+  "artifacts": {},
+  "messages": [],
+  "errors": [],
+  "repo_dir": "C:\\Users\\meigang90240\\Desktop\\烧录器agent\\langgraph_cswrite_agent\\runs\\20260629_172912_862_新增一个测试用_8_位旧_ICP_芯片_VMODEL_REPAIR_8BIT_验证自\\repo"
+}

@@ -5,6 +5,8 @@ from typing import Any, Literal, TypedDict
 
 Stage = Literal[
     "init",
+    "task_analysis",
+    "planner",
     "retrieval",
     "requirement_review",
     "architecture_review",
@@ -12,6 +14,10 @@ Stage = Literal[
     "coding",
     "test_design",
     "test_execution",
+    "critic",
+    "reflection",
+    "traceability_matrix",
+    "observability",
     "closed",
 ]
 
@@ -40,7 +46,11 @@ class AgentState(TypedDict, total=False):
     messages: list[str]
     llm_calls: list[dict[str, Any]]
     artifacts: dict[str, str]
+    chip_spec: dict[str, Any]
+    task_analysis: dict[str, Any]
+    execution_plan: dict[str, Any]
     retrieval: dict[str, Any]
+    managed_context: dict[str, Any]
     requirement_items: list[dict[str, Any]]
     architecture_layers: list[dict[str, Any]]
     detailed_design_items: list[dict[str, Any]]
@@ -48,5 +58,13 @@ class AgentState(TypedDict, total=False):
     coding_record: dict[str, Any]
     test_cases: dict[str, Any]
     test_execution: dict[str, Any]
+    critic_report: dict[str, Any]
+    reflection_report: dict[str, Any]
+    repair_history: list[dict[str, Any]]
+    repair_attempts: int
+    max_repair_attempts: int
+    inject_coding_defect: bool
+    traceability_matrix: dict[str, Any]
+    observability: dict[str, Any]
     final_key_path: dict[str, Any]
     errors: list[str]

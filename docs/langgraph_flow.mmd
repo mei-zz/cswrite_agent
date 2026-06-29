@@ -1,0 +1,67 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	route_entry(route_entry)
+	init_run(init_run)
+	task_analysis(task_analysis)
+	planner(planner)
+	retrieval(retrieval)
+	requirement_review(requirement_review)
+	requirement_gate(requirement_gate)
+	architecture_review(architecture_review)
+	architecture_gate(architecture_gate)
+	detailed_design(detailed_design)
+	coding(coding)
+	test_design(test_design)
+	test_execution(test_execution)
+	critic(critic)
+	reflection(reflection)
+	traceability_matrix(traceability_matrix)
+	observability(observability)
+	closed(closed)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> route_entry;
+	architecture_gate -.-> __end__;
+	architecture_gate -.-> detailed_design;
+	architecture_review --> architecture_gate;
+	coding --> test_design;
+	critic -.-> reflection;
+	critic -.-> traceability_matrix;
+	detailed_design --> coding;
+	init_run --> task_analysis;
+	observability --> closed;
+	planner --> retrieval;
+	reflection -.-> coding;
+	reflection -.-> detailed_design;
+	reflection -.-> test_design;
+	reflection -.-> traceability_matrix;
+	requirement_gate -.-> __end__;
+	requirement_gate -.-> architecture_review;
+	requirement_review --> requirement_gate;
+	retrieval --> requirement_review;
+	route_entry -.-> architecture_review;
+	route_entry -.-> closed;
+	route_entry -.-> coding;
+	route_entry -.-> critic;
+	route_entry -.-> detailed_design;
+	route_entry -.-> init_run;
+	route_entry -.-> observability;
+	route_entry -.-> planner;
+	route_entry -.-> reflection;
+	route_entry -.-> retrieval;
+	route_entry -.-> task_analysis;
+	route_entry -.-> test_design;
+	route_entry -.-> test_execution;
+	route_entry -.-> traceability_matrix;
+	task_analysis --> planner;
+	test_design --> test_execution;
+	test_execution --> critic;
+	traceability_matrix --> observability;
+	closed --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

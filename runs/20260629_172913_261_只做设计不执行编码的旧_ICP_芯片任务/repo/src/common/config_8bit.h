@@ -1,0 +1,13 @@
+#ifndef CONFIG_8BIT_H
+#define CONFIG_8BIT_H
+
+#define CSU32PX10 0x10
+#define CSU38MX10 0x11
+/* CHIP_DEFINE_END */
+
+#define STR_CSU32PX10 "CSU32PX10"
+#define STR_CSU38MX10 "CSU38MX10"
+/* CHIP_STR_END */
+
+#endif
+

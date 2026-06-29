@@ -17,7 +17,8 @@ def slugify(text: str, limit: int = 42) -> str:
 
 
 def new_run_id() -> str:
-    return datetime.now().strftime("%Y%m%d_%H%M%S")
+    # 秒级 run_id 在自动化测试里容易撞名；保留时间可读性，同时加入毫秒。
+    return datetime.now().strftime("%Y%m%d_%H%M%S_%f")[:-3]
 
 
 def create_task_dir(cfg: AgentConfig, task: str, run_id: str) -> tuple[Path, str]:
@@ -64,4 +65,3 @@ def markdown_table(rows: list[dict[str, Any]], headers: list[str]) -> str:
         values = [str(row.get(header, "")).replace("\n", "<br>") for header in headers]
         lines.append("| " + " | ".join(values) + " |")
     return "\n".join(lines)
-
